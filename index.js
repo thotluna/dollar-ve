@@ -7,4 +7,6 @@ import { getTwit } from './twitter/index.js'
 
 const twits = await getTwit()
 
-console.log({ twits })
+const sort = twits.sort((a, b) => a.id - b.id)
+
+console.log({ sort })
