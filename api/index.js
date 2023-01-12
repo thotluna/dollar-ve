@@ -13,11 +13,11 @@ app.get('/', (context) => {
     },
     {
       endpoint: '/bcv',
-      description: 'historical prices of the dollar according to BCV'
+      description: 'historical prices of the dollar according to BCV since January 12, 2023'
     },
     {
       endpoint: '/twitter',
-      description: 'Historical prices of the dollar according to several users on Twitter'
+      description: 'Historical prices of the dollar according to several users on Twitter since January 12, 2023'
     }
   ])
 })
