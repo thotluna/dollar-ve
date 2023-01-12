@@ -1,7 +1,9 @@
 import * as cheerio from 'cheerio'
+import { readDBFile, writeDBFile } from '../db/index.js'
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 const URL_BCV = 'https://www.bcv.org.ve/'
+const BCV_FILE_NAME = 'bcv'
 
 export const cleanText = (text) =>
   text
@@ -25,4 +27,18 @@ export async function getCurrency () {
   result.date = new Date(cleanText(dateHtml.attr().content))
 
   return result
+}
+
+export async function scrapeBCV () {
+  const currencies = await getCurrency()
+  console.log({ currencies })
+  const bcvRead = await readDBFile(BCV_FILE_NAME)
+
+  const lastDate = bcvRead.at(-1) ?? 0
+  const maxTimestamp = new Date(lastDate.date).getTime()
+  const currencyTimestamp = new Date(currencies.date).getTime()
+  if (currencyTimestamp > maxTimestamp) {
+    const db = [...bcvRead, currencies]
+    await writeDBFile(BCV_FILE_NAME, db)
+  }
 }

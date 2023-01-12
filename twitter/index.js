@@ -1,4 +1,7 @@
+import { readDBFile, writeDBFile } from '../db/index.js'
+
 const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent?query=from:'
+const TWITTER_FILE_NAME = 'twitter'
 
 const SEARCH_SITES = [
   { name: 'MonitorDolarVla', url: 'monitordolarvla', fun: getTwitMonitorDolarVla },
@@ -86,5 +89,17 @@ export async function getTwit () {
     const data = await getDataByFetch(url)
     result = result.concat(fun(name, data))
   }
-  return result
+  return result.sort((a, b) => a.id - b.id)
+}
+
+export async function scraperTwitter () {
+  const twits = await getTwit()
+  const dbRead = await readDBFile(TWITTER_FILE_NAME)
+  const idMax = Math.max(...dbRead.map(value => value.id))
+  const twitsSave = twits.filter(value => value.id > idMax)
+
+  if (twitsSave.length > 0) {
+    const db = [...dbRead, ...twitsSave]
+    await writeDBFile(TWITTER_FILE_NAME, db)
+  }
 }
