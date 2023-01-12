@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "scrape": "node --no-warnings ./index.js",
+    "dev:api": "wrangler dev api/index.js",
+    "dev:publish": "wrangler publish api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -22,6 +24,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "hono": "2.7.2",
     "prettier": "^2.8.2"
   }
 }
