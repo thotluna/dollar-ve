@@ -8,8 +8,15 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+import twitter from '../db/twitter.json'
+
 export default {
   async fetch (request, env, ctx) {
-    return new Response('Hello Friends!')
+    return new Response(JSON.stringify(twitter), {
+      headers: {
+        'Content-Type': 'application/json',
+        charset: 'utf8'
+      }
+    })
   }
 }
