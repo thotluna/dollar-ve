@@ -33,9 +33,14 @@ export async function scrapeBCV () {
   const currencies = await getCurrency()
   console.log({ currencies })
   const bcvRead = await readDBFile(BCV_FILE_NAME)
+  let maxTimestamp
+  if (bcvRead.length > 0) {
+    const lastDate = bcvRead.at(-1) ?? 0
+    maxTimestamp = new Date(lastDate.date).getTime()
+  } else {
+    maxTimestamp = new Date('1970-01-01').getTime()
+  }
 
-  const lastDate = bcvRead.at(-1) ?? 0
-  const maxTimestamp = new Date(lastDate.date).getTime()
   const currencyTimestamp = new Date(currencies.date).getTime()
   if (currencyTimestamp > maxTimestamp) {
     const db = [...bcvRead, currencies]
