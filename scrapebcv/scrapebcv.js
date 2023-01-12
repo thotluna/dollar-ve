@@ -24,7 +24,7 @@ export async function getCurrency () {
   result.dollar = cleanText($table.find('#dolar .centrado').text())
   result.euro = cleanText($table.find('#euro .centrado').text())
   const dateHtml = $table.find('.date-display-single')
-  result.date = new Date(cleanText(dateHtml.attr().content))
+  result.date = new Date(dateHtml.attr('content'))
 
   return result
 }
