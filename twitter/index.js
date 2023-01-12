@@ -74,7 +74,7 @@ function getTwitPrecioDelDolar (name, dataDirty) {
   dataDirty.forEach((value) => {
     const res = getData(value)
     res.id = value.id
-    res.name = name
+    res.name = name.replace(' ', '')
     res.created_at = value.created_at
     result.push(res)
   })

@@ -42,24 +42,10 @@
     "created_at": "2023-01-11T17:09:02.000Z"
   },
   {
-    "time": "2023-01-12T07:00:00.000Z",
-    "amount": 20.72,
-    "id": "1613490987849875456",
-    "name": "Precio del dólar",
-    "created_at": "2023-01-12T11:00:03.000Z"
-  },
-  {
-    "time": "2023-01-12T08:00:00.000Z",
-    "amount": 20.72,
-    "id": "1613506087340150788",
-    "name": "Precio del dólar",
-    "created_at": "2023-01-12T12:00:03.000Z"
-  },
-  {
     "time": "2023-01-12T09:00:00.000Z",
     "amount": 21.18,
     "id": "1613521187505672193",
-    "name": "Precio del dólar",
+    "name": "Preciodeldólar",
     "created_at": "2023-01-12T13:00:03.000Z"
   },
   {
@@ -73,28 +59,28 @@
     "time": "2023-01-12T10:00:00.000Z",
     "amount": 21.18,
     "id": "1613536287490703361",
-    "name": "Precio del dólar",
+    "name": "Preciodeldólar",
     "created_at": "2023-01-12T14:00:03.000Z"
   },
   {
     "time": "2023-01-12T11:00:00.000Z",
     "amount": 21.18,
     "id": "1613551393062764545",
-    "name": "Precio del dólar",
+    "name": "Preciodeldólar",
     "created_at": "2023-01-12T15:00:05.000Z"
   },
   {
     "time": "2023-01-12T12:00:00.000Z",
     "amount": 21.18,
     "id": "1613566492624183297",
-    "name": "Precio del dólar",
+    "name": "Preciodeldólar",
     "created_at": "2023-01-12T16:00:05.000Z"
   },
   {
     "time": "2023-01-12T13:00:00.000Z",
     "amount": 21.2,
     "id": "1613581591560818704",
-    "name": "Precio del dólar",
+    "name": "Preciodeldólar",
     "created_at": "2023-01-12T17:00:04.000Z"
   },
   {
@@ -108,21 +94,35 @@
     "time": "2023-01-12T14:00:00.000Z",
     "amount": 21.2,
     "id": "1613596686139392005",
-    "name": "Precio del dólar",
+    "name": "Preciodeldólar",
     "created_at": "2023-01-12T18:00:03.000Z"
   },
   {
     "time": "2023-01-12T15:00:00.000Z",
     "amount": 21.2,
     "id": "1613611785705095196",
-    "name": "Precio del dólar",
+    "name": "Preciodeldólar",
     "created_at": "2023-01-12T19:00:03.000Z"
   },
   {
     "time": "2023-01-12T16:00:00.000Z",
     "amount": 21.2,
     "id": "1613626885606412291",
-    "name": "Precio del dólar",
+    "name": "Preciodeldólar",
     "created_at": "2023-01-12T20:00:03.000Z"
+  },
+  {
+    "time": "2023-01-12T17:00:00.000Z",
+    "amount": 21.2,
+    "id": "1613641985281204251",
+    "name": "Preciodeldólar",
+    "created_at": "2023-01-12T21:00:03.000Z"
+  },
+  {
+    "time": "2023-01-12T18:00:00.000Z",
+    "amount": 21.2,
+    "id": "1613657085622845441",
+    "name": "Preciodeldólar",
+    "created_at": "2023-01-12T22:00:04.000Z"
   }
 ]
