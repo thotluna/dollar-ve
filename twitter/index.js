@@ -5,7 +5,8 @@ const TWITTER_FILE_NAME = 'twitter'
 
 const SEARCH_SITES = [
   { name: 'MonitorDolarVla', url: 'monitordolarvla', fun: getTwitMonitorDolarVla },
-  { name: 'Precio del dólar', url: 'negrodolar', fun: getTwitPrecioDelDolar }
+  { name: 'Preciodeldolar', url: 'negrodolar', fun: getTwitPrecioDelDolar },
+  { name: 'DolarToday', url: 'DolarToday', fun: getDolarToday }
 ]
 
 export const cleanText = (text) =>
@@ -34,7 +35,7 @@ const getData = (dataDirtty) => {
   }
   return {
     time: getDateFull(getDate(data), getTime(data), getMeridian(data)),
-    amount: getAmount(data)
+    dolar: getAmount(data)
   }
 }
 
@@ -61,7 +62,7 @@ function getTwitMonitorDolarVla (name, data) {
       const res = getData(value)
       res.id = value.id
       res.name = name
-      res.created_at = value.created_at
+      res.created_at = new Date(value.created_at).getTime()
 
       result.push(res)
     }
@@ -76,8 +77,32 @@ function getTwitPrecioDelDolar (name, dataDirty) {
     const res = getData(value)
     res.id = value.id
     res.name = name.replace(' ', '')
-    res.created_at = value.created_at
+    res.created_at = new Date(value.created_at).getTime()
     result.push(res)
+  })
+  return result
+}
+
+function getDolarToday (name, dataDirty) {
+  // Así cotiza el $ a esta hora BsF. 21,20 y el € a BsF. 19,93 entra sin bloqueos
+
+  const getData = (dirty) => {
+    const dividido = dirty.split('y el € a BsF.')
+    const currencies = dividido.map(value => Number(value.match(/([0-9]{2,4})+(,|\.)+([0-9]{1,2})/)[0].replace(',', '.')))
+    return {
+      dollar: currencies[0],
+      euro: currencies[1]
+    }
+  }
+  const result = []
+  dataDirty.forEach((value) => {
+    if (/Así cotiza el $ a esta hora BsF/.test(value)) {
+      const res = getData(value)
+      res.created_at = new Date(value.created_at).getTime()
+      res.name = name
+      res.id = dataDirty.id
+      result.push(res)
+    }
   })
   return result
 }
