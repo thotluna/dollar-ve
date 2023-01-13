@@ -31,4 +31,5 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: export TOKEN=${{secrets.TOKEN}}
+    - run: echo $TOKEN 
     - run: npm run scrape
