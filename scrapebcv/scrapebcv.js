@@ -24,7 +24,7 @@ export async function getCurrency () {
   result.dollar = cleanText($table.find('#dolar .centrado').text())
   result.euro = cleanText($table.find('#euro .centrado').text())
   const dateHtml = $table.find('.date-display-single')
-  result.created_at = new Date(dateHtml.attr('content'))
+  result.created_at = new Date(dateHtml.attr('content')).getTime()
 
   return result
 }
@@ -37,7 +37,7 @@ export async function scrapeBCV () {
     const lastDate = bcvRead.at(-1) ?? 0
     maxTimestamp = lastDate.created_at
   } else {
-    await writeDBFile(BCV_FILE_NAME, currencies)
+    await writeDBFile(BCV_FILE_NAME, [currencies])
     return
   }
 

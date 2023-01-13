@@ -15,10 +15,10 @@ export const getLastsTwitter = () => {
 const searchLastBcv = (acc, value) => {
   if (value === undefined) return {}
   if (acc.date === undefined) {
-    acc = { date: '1970/01/01' }
+    acc = { created_at: 0 }
   }
 
-  acc = new Date(acc.date).getTime() < new Date(value.date).getTime()
+  acc = acc.created_at < value.created_at
     ? value
     : acc
   return acc
