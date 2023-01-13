@@ -12,6 +12,7 @@ jobs:
     environment: build
     env: 
       API_TOKEN: ${{ secrets.API_TOKEN }}
+      PRUEBA: ${{vars.PRUEBA}}
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -20,6 +21,5 @@ jobs:
     - run: npm ci
     - run: npm run scrape
     - run: echo "aqui estamos con $PRUEBA"
-      env:
-        PRUEBA: ${{vars.PRUEBA}}
+      
         
