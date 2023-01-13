@@ -15,8 +15,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
-      env: 
-        token: ${{ secrets.token }}
     - run: npm ci
     - run: npm run scrape
+      env: 
+        API_TOKEN: ${{ secrets.token }}
         
