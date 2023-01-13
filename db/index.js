@@ -10,6 +10,6 @@ export async function readDBFile (dbName) {
 }
 
 export async function writeDBFile (dbName, data) {
-  logInfo(`Save in db ${dbName} ${data}`)
+  logInfo(`Save in db ${dbName}`)
   return await writeFile(`${DB_PATH}/${dbName}.json`, JSON.stringify(data, null, 2), 'utf-8')
 }
