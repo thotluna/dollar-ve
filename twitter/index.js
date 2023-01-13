@@ -113,6 +113,7 @@ export async function getTwit () {
     const { name, url, fun } = value
 
     const data = await getDataByFetch(url)
+    if (data === undefined) return
     result = result.concat(fun(name, data))
   }
   return result.sort((a, b) => a.id - b.id)
