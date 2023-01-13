@@ -42,7 +42,7 @@ const getData = (dataDirtty) => {
 
 export async function getDataByFetch (url) {
   const token = process.env.token
-  logSuccess({ token })
+  logSuccess(token)
   const options = {
     headers: {
       authorization: `Bearer ${token}`
