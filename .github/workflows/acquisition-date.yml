@@ -28,8 +28,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+        TOKEN: ${{ secrets.SuperSecret }}
         cache: 'npm'
     - run: npm install
-    - run: export TOKEN=${{secrets.TOKEN}}
-    - run: echo $TOKEN 
     - run: npm run scrape
+        
