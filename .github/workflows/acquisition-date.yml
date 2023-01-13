@@ -3,6 +3,9 @@
 
 name: Data acquisition
 
+env:
+  TOKEN: ${{secrets.TOKEN}}
+
 on:
   workflow_dispatch:
     
@@ -28,5 +31,3 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run scrape
-      env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
