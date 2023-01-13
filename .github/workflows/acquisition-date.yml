@@ -7,9 +7,9 @@ on:
     - cron: "0 10-16/5 * * 1-5"
 
 jobs:
-  environment: production
   build:
     runs-on: ubuntu-latest
+    environment: build
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
