@@ -24,12 +24,12 @@ jobs:
       run: npm run scrape
     
     - name: Commit changes
-      run:  EndBug/add-and-commit@v9
+      uses:  EndBug/add-and-commit@v9
       with:
         author_name: thotluna
         author_email: eladio.feijoo@gmail.com
         message: 'Add new acquisitions to bot'
-        
+
     
       
         
