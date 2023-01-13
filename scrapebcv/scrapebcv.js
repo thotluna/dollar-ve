@@ -34,7 +34,6 @@ async function getCurrencies ($) {
     const value = get($, selector, type)
     return [key, value]
   })
-
   const { ...currencies } = Object.fromEntries(entries)
 
   return currencies
@@ -42,7 +41,6 @@ async function getCurrencies ($) {
 
 function filterCurrencies (currentCurrency, currenciesSaved) {
   if (currenciesSaved.length === 0) return currentCurrency
-
   const lastCurrency = currenciesSaved.at(-1)
   const currentCurrencyFiltered = currentCurrency.filter(currency => currency.created_at > lastCurrency.created_at)
   return [...currenciesSaved, ...currentCurrencyFiltered].sort((a, b) => a.created_at - b.created_at)
@@ -53,6 +51,5 @@ export async function scrapeAnSaveBCV () {
   const currencies = [await getCurrencies($)]
   const currenciesDb = await readDBFile(BCV_FILE_NAME)
   const filtered = filterCurrencies(currencies, currenciesDb)
-  console.log(filtered, currenciesDb)
   await writeDBFile(BCV_FILE_NAME, filtered)
 }
