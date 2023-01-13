@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: 18
       env: 
-        token: ${{ secrets.TOKEN }}
+        token: ${{ secrets.cosa }}
     - run: npm ci
     - run: npm run scrape
         
