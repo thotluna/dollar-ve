@@ -17,12 +17,19 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
-    - run: npm ci
-    - run: npm run scrape
-        git config user.name thotluna
-        git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update dollar-ve database"
-        git push origin master
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: install npm dependecy
+      run: npm ci
+
+    - name: Load data from network
+      run: npm run scrape
+    
+    - name: Commit changes
+      run:  EndBug/add-and-commit@v9
+      with:
+        author_name: thotluna
+        author_email: eladio.feijoo@gmail.com
+        message: 'Add new acquisitions to bot'
+        
+    
       
         
