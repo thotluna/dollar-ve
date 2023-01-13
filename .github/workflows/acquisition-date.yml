@@ -3,8 +3,8 @@
 
 name: Data acquisition
 
-env:
-  TOKEN: ${{secrets.TOKEN}}
+#env:
+  #TOKEN: ${{secrets.TOKEN}}
 
 on:
   workflow_dispatch:
