@@ -29,6 +29,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         TOKEN: ${{ secrets.SuperSecret }}
+        env: 
+          TOKEN: ${{ secrets.SuperSecret }}
         cache: 'npm'
     - run: npm install
     - run: npm run scrape
