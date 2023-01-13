@@ -1,4 +1,5 @@
 import { readDBFile, writeDBFile } from '../db/index.js'
+import { logError } from '../utils/log.js'
 
 const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent?query=from:'
 const TWITTER_FILE_NAME = 'twitter'
@@ -120,10 +121,11 @@ export async function getTwit () {
 }
 
 export async function scraperTwitter () {
-  const twits = await getTwit()
+  const tweets = await getTwit()
+  if (tweets === undefined) return
   const dbRead = await readDBFile(TWITTER_FILE_NAME)
   const idMax = Math.max(...dbRead.map(value => value.id))
-  const twitsSave = twits.filter(value => value.id > idMax)
+  const twitsSave = tweets.filter(value => value.id > idMax)
 
   if (twitsSave.length > 0) {
     const db = [...dbRead, ...twitsSave]
