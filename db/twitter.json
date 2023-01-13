@@ -159,5 +159,75 @@
     "id": "1613777877534662656",
     "name": "Preciodeldolar",
     "created_at": 1673589603000
+  },
+  {
+    "time": "2023-01-13T05:00:00.000Z",
+    "dollar": 21.2,
+    "id": "1613823177574043649",
+    "name": "Preciodeldolar",
+    "created_at": 1673600403000
+  },
+  {
+    "time": "2023-01-13T06:00:00.000Z",
+    "dollar": 21.2,
+    "id": "1613838277269676034",
+    "name": "Preciodeldolar",
+    "created_at": 1673604003000
+  },
+  {
+    "time": "2023-01-13T07:00:00.000Z",
+    "dollar": 21.2,
+    "id": "1613853377728860163",
+    "name": "Preciodeldolar",
+    "created_at": 1673607603000
+  },
+  {
+    "time": "2023-01-13T08:00:00.000Z",
+    "dollar": 21.2,
+    "id": "1613868478028447745",
+    "name": "Preciodeldolar",
+    "created_at": 1673611204000
+  },
+  {
+    "time": "2023-01-13T09:00:00.000Z",
+    "dollar": 21.35,
+    "id": "1613883575929081859",
+    "name": "Preciodeldolar",
+    "created_at": 1673614803000
+  },
+  {
+    "time": "2023-01-13T10:00:00.000Z",
+    "dollar": 21.35,
+    "id": "1613898674328817665",
+    "name": "Preciodeldolar",
+    "created_at": 1673618403000
+  },
+  {
+    "time": "2023-01-13T11:00:00.000Z",
+    "dollar": 21.35,
+    "id": "1613913773764481026",
+    "name": "Preciodeldolar",
+    "created_at": 1673622003000
+  },
+  {
+    "time": "2023-01-13T12:00:00.000Z",
+    "dollar": 21.35,
+    "id": "1613928875087495168",
+    "name": "Preciodeldolar",
+    "created_at": 1673625603000
+  },
+  {
+    "time": "2023-01-13T13:00:00.000Z",
+    "dollar": 21.05,
+    "id": "1613943979216703488",
+    "name": "Preciodeldolar",
+    "created_at": 1673629204000
+  },
+  {
+    "time": "2023-01-13T14:00:00.000Z",
+    "dollar": 21.05,
+    "id": "1613959073719779342",
+    "name": "Preciodeldolar",
+    "created_at": 1673632803000
   }
 ]
