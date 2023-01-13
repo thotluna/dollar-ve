@@ -26,7 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
     - run: npm run scrape
       env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
