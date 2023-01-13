@@ -19,7 +19,7 @@ jobs:
           node-version: 18
       - run: npm install
           npm run scrape
-          git config user.name dollar-ve-bot
+          git config user.name thotluna
           git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update dollar-ve database"
           git push origin master
         env:
