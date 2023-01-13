@@ -17,6 +17,6 @@ jobs:
         node-version: 18
     - run: npm ci
       env: 
-        API_TOKEN: ${{ secrets.token }}
+        API_TOKEN: ${{ secrets.TOKEN_API }}
     - run: npm run scrape
         
