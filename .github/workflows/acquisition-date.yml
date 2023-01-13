@@ -19,5 +19,7 @@ jobs:
         node-version: 18
     - run: npm ci
     - run: npm run scrape
+    - run: git diff --quiet && git diff --staged --quiet || git commit -am "[bot] update dollar-ve database"
+          git push origin master
       
         
