@@ -36,7 +36,7 @@ const getData = (dataDirtty) => {
   }
   return {
     time: getDateFull(getDate(data), getTime(data), getMeridian(data)),
-    dolar: getAmount(data)
+    dollar: getAmount(data)
   }
 }
 
