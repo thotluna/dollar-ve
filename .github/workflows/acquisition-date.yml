@@ -19,8 +19,7 @@ jobs:
         node-version: 18
     - run: npm ci
     - run: npm run scrape
-  - name: "Prueba de Variable de configuracion"
-      run: echo "aqui estamos con $PRUEBA"
+    - run: echo "aqui estamos con $PRUEBA"
       env:
         PRUEBA: ${{vars.PRUEBA}}
         
