@@ -1,5 +1,5 @@
 import { readDBFile, writeDBFile } from '../db/index.js'
-import { logError } from '../utils/log.js'
+import { logError, logSuccess } from '../utils/log.js'
 
 const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent?query=from:'
 const TWITTER_FILE_NAME = 'twitter'
@@ -49,6 +49,12 @@ export async function getDataByFetch (url) {
   }
 
   const response = await fetch(URL_TWITTER + url + '&tweet.fields=created_at', options)
+  const status = await response.status
+  if (status === 200) {
+    logSuccess(`Fetch to ${URL_TWITTER}${url} Status:  ${status}`)
+  } else {
+    logError(`Error fetching ${URL_TWITTER} status: ${status}`)
+  }
   const res = await response.json()
   return res.data
 }
