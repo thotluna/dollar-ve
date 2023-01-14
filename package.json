@@ -8,7 +8,8 @@
     "scrape": "node --no-warnings ./data-acquisition/index.js",
     "dev:api": "wrangler dev api/index.js",
     "publish:api": "wrangler publish api/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
-    "vitest": "^0.27.1",
+    "vitest": "0.27.1",
     "wrangler": "^2.7.1"
   },
   "dependencies": {
