@@ -9,7 +9,8 @@ const getLastTwitter = (acc, value) => {
 }
 
 export const getLastsTwitter = () => {
-  return Twitter.reduce(getLastTwitter, {})
+  const obj = Twitter.reduce(getLastTwitter, {})
+  return Object.entries(obj).map(([key, value]) => value)
 }
 
 const searchLastBcv = (acc, value) => {
@@ -25,5 +26,5 @@ const searchLastBcv = (acc, value) => {
 }
 
 export const getLastBcv = () => {
-  return BCV.reduce(searchLastBcv, {})
+  return [BCV.reduce(searchLastBcv, {})]
 }
