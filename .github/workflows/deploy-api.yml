@@ -15,18 +15,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - uses: dorny/paths-filter@v2
-  	id: changes
-  	with:
-    	filters: |
-	  shared: &shared
-	    - 'db/**'
-	  src:
-	    - *shared
-	    - 'api/**'
       - name: install npm dependecy
         run: npm ci
-			- if: steps.changes.outputs.src == 'true'
       - name: Publish
         uses: cloudflare/wrangler-action@2.0.0
         with:
