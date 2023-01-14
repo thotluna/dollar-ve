@@ -264,5 +264,12 @@
     "id": "1614034574656282625",
     "name": "Preciodeldolar",
     "created_at": 1673650804000
+  },
+  {
+    "time": "2023-01-13T20:00:00.000Z",
+    "dollar": 21.05,
+    "id": "1614049674968571906",
+    "name": "Preciodeldolar",
+    "created_at": 1673654404000
   }
 ]
