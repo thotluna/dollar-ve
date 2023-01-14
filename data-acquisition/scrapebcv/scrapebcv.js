@@ -1,6 +1,6 @@
 import * as cheerio from 'cheerio'
 import { readDBFile, writeDBFile } from '../../db/index.js'
-import { logError, logSuccess } from '../../utils/log.js'
+import { loggingStatusFetch, filterCurrencies } from '../utils.js'
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 const URL_BCV = 'https://www.bcv.org.ve/'
@@ -14,12 +14,7 @@ const FIELS = {
 
 async function fetching (url) {
   const response = await fetch(url, { rejectUnauthorized: false })
-  const status = response.status
-  if (status === 200) {
-    logSuccess(`Fetch to ${URL_BCV} Status:  ${status}`)
-  } else {
-    logError(`Error fetching ${URL_BCV} status: ${status}`)
-  }
+  loggingStatusFetch(url, response.status)
   const html = await response.text()
   return cheerio.load(html)
 }
@@ -44,14 +39,6 @@ async function getCurrencies ($) {
   const { ...currencies } = Object.fromEntries(entries)
 
   return currencies
-}
-
-function filterCurrencies (currentCurrency, currenciesSaved) {
-  if (currenciesSaved.length === 0) return currentCurrency
-  const lastCurrency = currenciesSaved.at(-1)
-  const currentCurrencyFiltered = currentCurrency.filter(currency => currency.created_at > lastCurrency.created_at)
-  if (currentCurrencyFiltered.length === 0) return []
-  return [...currenciesSaved, ...currentCurrencyFiltered].sort((a, b) => a.created_at - b.created_at)
 }
 
 export async function scrapeAnSaveBCV () {

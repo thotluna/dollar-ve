@@ -1,7 +1,8 @@
 import { readDBFile, writeDBFile } from '../../db/index.js'
 import { logError, logSuccess } from '../../utils/log.js'
+import { filterCurrencies, loggingStatusFetch } from '../utils.js'
 
-const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent?query=from:'
+const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent?tweet.fields=created_at&query=from:'
 const TWITTER_FILE_NAME = 'twitter'
 
 const SEARCH_SITES = [
@@ -15,6 +16,17 @@ export const cleanText = (text) =>
     .replace(/\t|\n|\s:/g, '')
     .replace(/.*:/g, ' ')
     .trim()
+
+export async function fetching (url) {
+  const API_TOKEN = process.env.API_TOKEN
+  const options = { headers: { authorization: `Bearer ${API_TOKEN}` } }
+  const urlFull = `${URL_TWITTER}${url}`
+
+  const response = await fetch(urlFull, options)
+  loggingStatusFetch(urlFull, response.status)
+  const res = await response.json()
+  return res.data
+}
 
 const getData = (dataDirtty) => {
   const data = dataDirtty.text
@@ -38,25 +50,6 @@ const getData = (dataDirtty) => {
     time: getDateFull(getDate(data), getTime(data), getMeridian(data)),
     dollar: getAmount(data)
   }
-}
-
-export async function getDataByFetch (url) {
-  const API_TOKEN = process.env.API_TOKEN
-  const options = {
-    headers: {
-      authorization: `Bearer ${API_TOKEN}`
-    }
-  }
-
-  const response = await fetch(URL_TWITTER + url + '&tweet.fields=created_at', options)
-  const status = await response.status
-  if (status === 200) {
-    logSuccess(`Fetch to ${URL_TWITTER}${url} Status:  ${status}`)
-  } else {
-    logError(`Error fetching ${URL_TWITTER} status: ${status}`)
-  }
-  const res = await response.json()
-  return res.data
 }
 
 function getTwitMonitorDolarVla (name, data) {
@@ -119,7 +112,7 @@ export async function getTwit () {
   for (const value of SEARCH_SITES) {
     const { name, url, fun } = value
 
-    const data = await getDataByFetch(url)
+    const data = await fetching(url)
     if (data === undefined) return
     result = result.concat(fun(name, data))
   }
@@ -130,11 +123,12 @@ export async function scraperTwitter () {
   const tweets = await getTwit()
   if (tweets === undefined) return
   const dbRead = await readDBFile(TWITTER_FILE_NAME)
-  const idMax = Math.max(...dbRead.map(value => value.id))
-  const twitsSave = tweets.filter(value => value.id > idMax)
-
-  if (twitsSave.length > 0) {
-    const db = [...dbRead, ...twitsSave]
-    await writeDBFile(TWITTER_FILE_NAME, db)
+  const filtered = filterCurrencies(tweets, dbRead)
+  if (filtered.length > 0) {
+    await writeDBFile(TWITTER_FILE_NAME, filtered)
   }
+}
+
+export async function acquire () {
+
 }
