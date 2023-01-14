@@ -17,7 +17,14 @@ app.get('/', (context) => {
     },
     {
       endpoint: '/twitter',
-      description: 'Historical prices of the dollar according to several users on Twitter since January 12, 2023'
+      description: 'Historical prices of the dollar according to several users on Twitter since January 12, 2023',
+      parameters: [
+        {
+          name: 'username',
+          endpoint: '/twitter/:username',
+          description: 'Historical prices of the dollar according to the user on Twitter since January 12, 2023'
+        }
+      ]
     }
   ])
 })
@@ -33,6 +40,13 @@ app.get('/current', (context) => {
   })
 })
 
+app.get('/bcv', (context) => {
+  return context.json({
+    return: '/',
+    data: bcv
+  })
+})
+
 app.get('/twitter', (context) => {
   return context.json({
     return: '/',
@@ -40,10 +54,12 @@ app.get('/twitter', (context) => {
   })
 })
 
-app.get('/bcv', (context) => {
+app.get('/twitter/:username', (context) => {
+  const username = context.req.param('username')
+
   return context.json({
     return: '/',
-    data: bcv
+    data: twitter.filter(value => value.name === username)
   })
 })
 
