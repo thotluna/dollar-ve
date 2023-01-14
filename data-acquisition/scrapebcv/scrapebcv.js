@@ -1,5 +1,6 @@
 import * as cheerio from 'cheerio'
 import { readDBFile, writeDBFile } from '../../db/index.js'
+import { logError, logSuccess } from '../../utils/log.js'
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 const URL_BCV = 'https://www.bcv.org.ve/'
@@ -13,6 +14,12 @@ const FIELS = {
 
 async function fetching (url) {
   const response = await fetch(url, { rejectUnauthorized: false })
+  const status = response.status
+  if (status === 200) {
+    logSuccess(`Fetch to ${URL_BCV} Status:  ${status}`)
+  } else {
+    logError(`Error fetching ${URL_BCV} status: ${status}`)
+  }
   const html = await response.text()
   return cheerio.load(html)
 }
