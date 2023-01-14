@@ -1,5 +1,4 @@
 import { readDBFile, writeDBFile } from '../../db/index.js'
-import { logError, logSuccess } from '../../utils/log.js'
 import { filterCurrencies, loggingStatusFetch } from '../utils.js'
 
 const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent?tweet.fields=created_at&query=from:'
@@ -110,11 +109,11 @@ function getDolarToday (name, dataDirty) {
 export async function getTwit () {
   let result = []
   for (const value of SEARCH_SITES) {
-    const { name, url, fun } = value
+    const { url, fun } = value
 
     const data = await fetching(url)
     if (data === undefined) return
-    result = result.concat(fun(name, data))
+    result = result.concat(fun(url, data))
   }
   return result.sort((a, b) => a.id - b.id)
 }
