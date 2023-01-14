@@ -16,11 +16,11 @@ export const getLastsTwitter = () => {
 const searchLastBcv = (acc, value) => {
   if (value === undefined) return {}
   if (acc.date === undefined) {
-    acc = { created_at: 0 }
+    acc = { name: 'BCV', created_at: 0 }
   }
 
   acc = acc.created_at < value.created_at
-    ? value
+    ? { name: 'BCV', ...value }
     : acc
   return acc
 }

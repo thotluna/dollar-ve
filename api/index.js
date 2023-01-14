@@ -30,10 +30,10 @@ app.get('/', (context) => {
 })
 
 app.get('/current', (context) => {
-  const result = {
-    bcv: getLastBcv(),
-    twitter: getLastsTwitter()
-  }
+  const result = [
+    getLastBcv(),
+    getLastsTwitter()
+	]
   return context.json({
     return: '/',
     data: result
