@@ -5,28 +5,40 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "scrape": "node --no-warnings ./data-acquisition/index.js",
+    "astro": "astro",
+    "build": "astro build",
+    "coverage": "vitest run --coverage",
     "dev:api": "wrangler dev api/index.js",
+    "dev": "astro dev",
+    "format": "prettier --write .",
+    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint . --ext .js,.astro,.ts,.tsx",
+    "preview": "astro preview",
     "publish:api": "wrangler publish api/index.js",
-    "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "scrape": "node --no-warnings ./data-acquisition/index.js",
+    "start": "astro dev",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.31.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^6.1.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "8.31.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-plugin-astro": "0.21.1",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-n": "15.6.1",
+    "eslint-plugin-promise": "6.1.1",
+    "prettier": "2.8.3",
+    "prettier-plugin-astro": "0.7.2",
     "vitest": "0.27.1",
-    "wrangler": "^2.7.1"
+    "wrangler": "2.7.1"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
+    "astro": "1.9.0",
+    "cheerio": "1.0.0-rc.12",
     "hono": "2.7.2",
-    "picocolors": "1.0.0",
-    "prettier": "^2.8.2"
+    "picocolors": "1.0.0"
   }
 }
