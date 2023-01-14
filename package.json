@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "scrape": "node --no-warnings ./index.js",
+    "scrape": "node --no-warnings ./data-acquisition/index.js",
     "dev:api": "wrangler dev api/index.js",
     "publish:api": "wrangler publish api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
