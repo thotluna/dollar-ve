@@ -33,7 +33,7 @@ app.get('/current', (context) => {
   const result = [
     getLastBcv(),
     getLastsTwitter()
-	]
+	].flat()
   return context.json({
     return: '/',
     data: result
