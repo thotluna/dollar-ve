@@ -12,15 +12,15 @@ jobs:
     name: Deploy API to cloudflare Workers
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
 			- uses: dorny/paths-filter@v2
 				id: changues
 				with:
 					filter: |
 						- 'db/**'
 						- 'api/**'
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
       - name: install npm dependecy
         run: npm ci
 			- if: steps.changes.outputs.src == 'true'
