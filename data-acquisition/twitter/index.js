@@ -1,5 +1,5 @@
-import { readDBFile, writeDBFile } from '../db/index.js'
-import { logError, logSuccess } from '../utils/log.js'
+import { readDBFile, writeDBFile } from '../../db/index.js'
+import { logError, logSuccess } from '../../utils/log.js'
 
 const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent?query=from:'
 const TWITTER_FILE_NAME = 'twitter'
