@@ -1,5 +1,5 @@
 import * as cheerio from 'cheerio'
-import { readDBFile, writeDBFile } from '../db/index.js'
+import { readDBFile, writeDBFile } from '../../db/index.js'
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0
 const URL_BCV = 'https://www.bcv.org.ve/'
@@ -43,6 +43,7 @@ function filterCurrencies (currentCurrency, currenciesSaved) {
   if (currenciesSaved.length === 0) return currentCurrency
   const lastCurrency = currenciesSaved.at(-1)
   const currentCurrencyFiltered = currentCurrency.filter(currency => currency.created_at > lastCurrency.created_at)
+  if (currentCurrencyFiltered.length === 0) return []
   return [...currenciesSaved, ...currentCurrencyFiltered].sort((a, b) => a.created_at - b.created_at)
 }
 
@@ -51,5 +52,7 @@ export async function scrapeAnSaveBCV () {
   const currencies = [await getCurrencies($)]
   const currenciesDb = await readDBFile(BCV_FILE_NAME)
   const filtered = filterCurrencies(currencies, currenciesDb)
-  await writeDBFile(BCV_FILE_NAME, filtered)
+  if (filtered.length > 0) {
+    await writeDBFile(BCV_FILE_NAME, filtered)
+  }
 }
