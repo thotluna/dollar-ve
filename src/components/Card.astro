@@ -1,62 +1,22 @@
 ---
 export interface Props {
-	title: string;
-	body: string;
-	href: string;
+	name: string;
+	dollar: string | number;
+	created_at: number;
 }
 
-const { href, title, body } = Astro.props;
+const { name, dollar, created_at} = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 0.15rem;
-		background-color: white;
-		background-image: var(--accent-gradient);
-		background-size: 400%;
-		border-radius: 0.5rem;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-	}
+<article class="bg-slate-700 rounded-lg p-8 shadow-md gap-4 min-w-[290px]">
+	<h4>{name}</h4>
+	<div class="flex flex-row gap-4">
+		<h2 class="text-5xl">{Number(dollar)} <strong class="text-base">Bs.</strong></h2>
+		<div class="flex flex-col text-red-400 items-center" >
+			<svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 3)"><path d="m8.5 4.5-4-4-4.029 4"/><path d="m4.5.5v13"/></g></svg>
+			<strong >0.25</strong>
+		</div>
+		</div>
+	<p class="text-center">{new Date(created_at).toLocaleString()}</p>
+</article>
 
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: 1rem 1.3rem;
-		border-radius: 0.35rem;
-		color: #111;
-		background-color: white;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-		color: #444;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent));
-	}
-</style>
