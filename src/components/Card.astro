@@ -8,11 +8,11 @@ export interface Props {
 const { name, dollar, created_at} = Astro.props;
 ---
 
-<article class="bg-slate-700 rounded-lg p-8 shadow-md gap-4 min-w-[290px]">
-	<h4>{name}</h4>
-	<div class="flex flex-row gap-4">
-		<h2 class="text-5xl">{Number(dollar)} <strong class="text-base">Bs.</strong></h2>
-		<div class="flex flex-col text-red-400 items-center" >
+<article class="bg-slate-700 rounded-lg p-8 shadow-md min-w-[290px] flex flex-col gap-2">
+	<h4 class="text-right text-slate-300">{name === 'BCV'? name : `@${name}`}</h4>
+	<div class="flex flex-row gap-4 justify-between items-center">
+		<h2 class="text-5xl text-slate-200">{Number(dollar)} <strong class="text-base">Bs.</strong></h2>
+		<div class="flex flex-col text-red-400 items-center justify-center" >
 			<svg height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 3)"><path d="m8.5 4.5-4-4-4.029 4"/><path d="m4.5.5v13"/></g></svg>
 			<strong >0.25</strong>
 		</div>
