@@ -13,18 +13,43 @@ export const getLastsTwitter = () => {
   return Object.entries(obj).map(([key, value]) => value)
 }
 
-const searchLastBcv = (acc, value) => {
-  if (value === undefined) return {}
-  if (acc.date === undefined) {
-    acc = { name: 'BCV', created_at: 0 }
-  }
-
-  acc = acc.created_at < value.created_at
-    ? { name: 'BCV', ...value }
-    : acc
-  return acc
+export const getLastBcv = () => {
+	const list = BCV.sort((a, b) => a.created_at - b.created_at).reverse()
+	const currentCurrency = list[0]
+	const currentDollarString = currentCurrency.dollar.replace('.', '')
+	const currentDollar = Number(currentDollarString)
+	const lastDollarString = list[1].dollar.replace('.', '')
+	const lastDollar = Number(lastDollarString)
+	currentCurrency.name = 'BCV'
+	if (isNaN(lastDollar)) {
+		currentCurrency.increase = 0
+	} else {
+		currentCurrency.increase = (currentDollar - lastDollar) * 100 / (lastDollar + currentDollar)
+	}
+	console.log(currentCurrency)
+  return [currentCurrency]
 }
 
-export const getLastBcv = () => {
-  return [BCV.reduce(searchLastBcv, {})]
+export const getUserTwitter = () => {
+	return Twitter.reduce((acc, value) => {
+		if (!acc.includes(value.name)) {
+			acc.push(value.name)
+		}
+		return acc
+	}, [])
+}
+
+export const getTweets = (username) => {
+	return Twitter.filter(({ name }) => name === username)
+}
+
+export const currencyForTwitter = () => {
+	const username = getUserTwitter()
+	const tweets = username.map(value => {
+		return getTweets(value).sort((a, b) => a.created_at - b.created_b).reverse().slice(0, 2)
+	})
+  return tweets.map(([current, last]) => {
+    current.increase = (current.dollar - last.dollar) * 100 / (current.dollar + last.dollar)
+    return current
+  })
 }

@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import twitter from '../db/twitter.json'
 import bcv from '../db/bcv.json'
-import { getLastBcv, getLastsTwitter } from './services'
+import { currencyForTwitter, getLastBcv, getLastsTwitter } from './services'
 
 const app = new Hono()
 
@@ -32,7 +32,7 @@ app.get('/', (context) => {
 app.get('/current', (context) => {
   const result = [
     getLastBcv(),
-    getLastsTwitter()
+    currencyForTwitter()
 	].flat()
   return context.json({
     return: '/',
