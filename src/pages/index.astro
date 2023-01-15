@@ -1,35 +1,15 @@
 ---
 import Card from '../components/Card.astro';
 import Layout from '../layouts/Layout.astro'
-const currencies = [
-	{
-	"name": "BCV",
-	"dollar": "19.45250000",
-	"euro": "21.06962832",
-	"created_at": 1673841600000
-	},
-	{
-	"time": "2023-01-12T01:25:00.000Z",
-	"dollar": 21.21,
-	"id": "1613589199520763927",
-	"name": "monitordolarvla",
-	"created_at": 1673544618000
-	},
-	{
-	"time": "2023-01-13T20:00:00.000Z",
-	"dollar": 21.05,
-	"id": "1614049674968571906",
-	"name": "negrodolar",
-	"created_at": 1673654404000
-	}
-]
+import { getCurrencies } from '../services/currencies';
+const currencies = await getCurrencies()
 ---
 
 <Layout title="Welcome to Astro.">
 	
 	<div class="container min-h-screen mx-auto bg-slate-900 ">
 		<main class="flex flex-col justify-center items-center gap-8 min-h-screen  ">
-			<h1 class="text-8xl text-center">Dollar - Bolívar</h1>
+			<h1 class="text-8xl text-center text-slate-200">Dollar - Bolívar</h1>
 			<section class="flex flex-col gap-4 justify-center items-center md:flex-row md:flex-wrap">
 				{
 					currencies.map(({name, dollar, created_at}) => (
