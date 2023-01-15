@@ -26,7 +26,6 @@ export const getLastBcv = () => {
 	} else {
 		currentCurrency.increase = (currentDollar - lastDollar) * 100 / (lastDollar + currentDollar)
 	}
-	console.log(currentCurrency)
   return [currentCurrency]
 }
 

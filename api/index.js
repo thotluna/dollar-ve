@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import twitter from '../db/twitter.json'
 import bcv from '../db/bcv.json'
-import { currencyForTwitter, getLastBcv, getLastsTwitter } from './services'
+import { currencyForTwitter, getLastBcv } from './services'
 
 const app = new Hono()
 
