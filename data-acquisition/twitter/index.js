@@ -67,7 +67,7 @@ function getTwitMonitorDolarVla (name, data) {
       res.id = value.id
       res.name = name
       res.created_at = new Date(value.created_at).getTime()
-
+			res.data = data
       result.push(res)
     }
   })
@@ -75,19 +75,20 @@ function getTwitMonitorDolarVla (name, data) {
   return result
 }
 
-function getTwitPrecioDelDolar (name, dataDirty) {
+function getTwitPrecioDelDolar (name, data) {
   const result = []
-  dataDirty.forEach((value) => {
+  data.forEach((value) => {
     const res = getData(value)
     res.id = value.id
     res.name = name.replace(' ', '')
     res.created_at = new Date(value.created_at).getTime()
+		res.data = data
     result.push(res)
   })
   return result
 }
 
-function getDolarToday (name, dataDirty) {
+function getDolarToday (name, data) {
   // Así cotiza el $ a esta hora BsF. 21,20 y el € a BsF. 19,93 entra sin bloqueos
 
   const getData = (dirty) => {
@@ -99,12 +100,13 @@ function getDolarToday (name, dataDirty) {
     }
   }
   const result = []
-  dataDirty.forEach((value) => {
+  data.forEach((value) => {
     if (/Así cotiza el $ a esta hora BsF/.test(value)) {
       const res = getData(value)
       res.created_at = new Date(value.created_at).getTime()
       res.name = name
-      res.id = dataDirty.id
+      res.id = data.id
+			res.data = data
       result.push(res)
     }
   })
