@@ -40,7 +40,9 @@ const getData = (dataDirtty) => {
   }
 
   const getAmount = data => {
-    const amountArr = data.match(/([0-9]{2,4})+(,|\.)+([0-9]{1,2})/)[0]
+    let amountArr = data.match(/([0-9]{2,4})+(,|\.)+([0-9]{1,2})/)
+		if (!amountArr) return
+		amountArr = amountArr[0]
     const amount = /,/.test(amountArr) ? amountArr.replace(',', '.') : amountArr
 
     return Number(amount)
