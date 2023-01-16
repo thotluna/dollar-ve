@@ -29,6 +29,10 @@ jobs:
         author_name: thotluna
         author_email: eladio.feijoo@gmail.com
         message: 'Add new acquisitions to bot'
+		- name: Publish
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
 
     
       
