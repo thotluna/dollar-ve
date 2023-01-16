@@ -1,0 +1,21 @@
+---
+import ArrowDown from './ArrowDown.astro';
+import ArrowUp from './ArrowUp.astro';
+
+export interface Props{
+	increase: number
+}
+
+const {increase} = Astro.props
+const styleColor = increase < 0 ? 'text-red-200' : 'text-green-200'
+---
+
+<div class={`flex flex-col items-center justify-center ${styleColor}` } >
+	{
+		increase > 0 && (<ArrowUp />)
+	}
+	{
+		increase < 0 && (<ArrowDown  />)
+	}
+	<strong >{increase.toFixed(2)}%</strong>
+</div>
