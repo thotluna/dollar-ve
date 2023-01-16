@@ -1,5 +1,6 @@
 ---
 import Card from '../components/Card.astro';
+import ChartBackground from '../components/ChartBackground.astro';
 import Layout from '../layouts/Layout.astro'
 import { getCurrencies } from '../services/currencies';
 const currencies = await getCurrencies()
@@ -7,18 +8,19 @@ const currencies = await getCurrencies()
 
 <Layout title="Welcome to Astro.">
 	
-	<div class="container min-h-screen mx-auto bg-slate-900 ">
-		<main class="flex flex-col justify-center items-center gap-8 min-h-screen  ">
+	<div class="min-h-screen mx-auto bg-slate-900 ">
+		<ChartBackground>
+		<main class="flex flex-col justify-center items-center gap-24 min-h-screen ">
 			<h1 class="text-8xl text-center text-slate-200">Dollar - Bolívar</h1>
 			<section class="flex flex-col gap-4 justify-center items-center md:flex-row md:flex-wrap">
 				{
-					currencies.map(({name, dollar, created_at}) => (
-						<Card name={name} dollar={dollar} created_at={created_at} />
+					currencies.map(({name, dollar, created_at, increase }) => (
+						<Card name={name} dollar={dollar} created_at={created_at} increase={increase} />
 					))
 				}
 			</section>
 		</main>
-
+	</ChartBackground>
 	</div>
 	
 </Layout>
