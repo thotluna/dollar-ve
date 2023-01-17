@@ -67,7 +67,7 @@ function getTwitMonitorDolarVla (name, data) {
       res.id = value.id
       res.name = name
       res.created_at = new Date(value.created_at).getTime()
-			res.data = data
+			res.data = value
       result.push(res)
     }
   })
@@ -82,7 +82,7 @@ function getTwitPrecioDelDolar (name, data) {
     res.id = value.id
     res.name = name.replace(' ', '')
     res.created_at = new Date(value.created_at).getTime()
-		res.data = data
+		res.data = value
     result.push(res)
   })
   return result
@@ -106,7 +106,7 @@ function getDolarToday (name, data) {
       res.created_at = new Date(value.created_at).getTime()
       res.name = name
       res.id = data.id
-			res.data = data
+			res.data = value
       result.push(res)
     }
   })
