@@ -52,3 +52,35 @@ export const currencyForTwitter = () => {
     return current
   })
 }
+
+export const getLastWeekByUsername = (username) => {
+	const list = username === 'bcv'
+		? BCV
+		: getTweets(username)
+
+	const today = new Date()
+	const date = today.setDate(today.getDate() - 7)
+
+	const filtered = list.filter(value => new Date(value.created_at).getTime() >= date)
+		.reduce((acc, value) => {
+			const date = new Intl.DateTimeFormat('en-US').format(new Date(value.created_at))
+
+			const data = {
+				date,
+				dollar: value.dollar,
+				current_at: value.created_at
+			}
+
+			if (!acc[`${date}`]) {
+				acc[`${date}`] = data
+			} else {
+				acc[`${date}`] = acc[`${date}`].date < value.created_at ? data : acc[`${date}`]
+			}
+
+			return acc
+		}, {})
+
+		const filteredEntries = Object.entries(filtered)
+
+	return filteredEntries.map(([, value]) => value)
+}

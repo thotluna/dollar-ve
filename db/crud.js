@@ -45,3 +45,8 @@ export async function getLastTweets(dbName) {
 
 	return tweetsList.map(([key, value]) => value)
 }
+
+export async function getLastWeekByUsername(username) {
+	const dbName = username === 'bcv' ? 'bcv' : 'TWITTER'
+	return getAllByUsername(dbName, username)
+}

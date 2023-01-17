@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import twitter from '../db/twitter.json'
 import bcv from '../db/bcv.json'
-import { currencyForTwitter, getLastBcv } from './services'
+import { currencyForTwitter, getLastBcv, getLastWeekByUsername } from './services'
 
 const app = new Hono()
 
@@ -11,6 +11,10 @@ app.get('/', (context) => {
       endpoint: '/current',
       description: 'Current prices of the dollar with respect to the bolivar'
     },
+		{
+			endpoint: '/last-week/:username',
+			description: 'prices of the dollar form last week '
+		},
     {
       endpoint: '/bcv',
       description: 'historical prices of the dollar according to BCV since January 12, 2023'
@@ -51,6 +55,15 @@ app.get('/twitter', (context) => {
   return context.json({
     return: '/',
     data: twitter
+  })
+})
+
+app.get('/last-week/:username', (context) => {
+  const username = context.req.param('username')
+
+  return context.json({
+    return: '/',
+    data: getLastWeekByUsername(username)
   })
 })
 
