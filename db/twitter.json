@@ -68,5 +68,26 @@
     "id": "1613589199520763927",
     "name": "monitordolarvla",
     "created_at": 1673544618000
+  },
+  {
+    "dollar": 21,
+    "euro": 19.74,
+    "created_at": 1673889663000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 21,00 y el € a BsF. 19,74 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/3BXXG8uEGs"
+  },
+  {
+    "dollar": 21,
+    "euro": 19.74,
+    "created_at": 1673896863000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 21,00 y el € a BsF. 19,74 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/wIh7OClpzI"
+  },
+  {
+    "dollar": 21,
+    "euro": 19.74,
+    "created_at": 1673904063000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 21,00 y el € a BsF. 19,74 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/V141XxM1mw"
   }
 ]
