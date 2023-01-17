@@ -1,13 +1,23 @@
 import { readDBFile, writeDBFile } from '../../db/index.js'
 import { filterCurrencies, loggingStatusFetch } from '../utils.js'
+import { getLastTweets } from '../../db/crud.js'
 
-const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent?tweet.fields=created_at&query=from:'
+const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent'
 const TWITTER_FILE_NAME = 'twitter'
 
+const getUrl = (username, date) => {
+	const dateIso = new Date(date).toISOString()
+	let url = `${URL_TWITTER}?tweet.fields=created_at&query=from:${username}`
+	if (date) {
+		url += `&start_time=${dateIso}`
+	}
+	return url
+}
+
 const SEARCH_SITES = [
-  // { name: 'MonitorDolarVla', url: 'monitordolarvla', fun: getTwitMonitorDolarVla },
-  // { name: 'Preciodeldolar', url: 'negrodolar', fun: getTwitPrecioDelDolar },
-  { name: 'DolarToday', url: 'DolarToday', fun: getDolarToday }
+  { name: 'MonitorDolarVla', username: 'monitordolarvla', fun: getTwitMonitorDolarVla },
+  { name: 'Preciodeldolar', username: 'negrodolar', fun: getTwitPrecioDelDolar },
+  { name: 'DolarToday', username: 'DolarToday', fun: getDolarToday }
 ]
 
 export const cleanText = (text) =>
@@ -16,10 +26,10 @@ export const cleanText = (text) =>
     .replace(/.*:/g, ' ')
     .trim()
 
-export async function fetching (url) {
+export async function fetching (username, date) {
   const API_TOKEN = process.env.API_TOKEN
   const options = { headers: { authorization: `Bearer ${API_TOKEN}` } }
-  const urlFull = `${URL_TWITTER}${url}`
+  const urlFull = getUrl(username, date)
 
   const response = await fetch(urlFull, options)
   loggingStatusFetch(urlFull, response.status)
@@ -115,11 +125,18 @@ function getDolarToday (name, data) {
 export async function getTwit () {
   let result = []
   for (const value of SEARCH_SITES) {
-    const { url, fun } = value
+    const { username, fun } = value
+		const lasts = await getLastTweets(TWITTER_FILE_NAME)
+		const lastCreatedAt = lasts.reduce((acc, value) => {
+			acc = value.name === username ? value : acc
+			return acc
+		})
 
-    const data = await fetching(url)
+		const data = lastCreatedAt
+			? await fetching(username, lastCreatedAt.created_at)
+			: await fetching(username)
     if (data === undefined) return
-    result = result.concat(fun(url, data))
+    result = result.concat(fun(username, data))
   }
   return result.sort((a, b) => a.id - b.id)
 }
