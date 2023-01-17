@@ -61,8 +61,7 @@ function getTwitMonitorDolarVla (name, data) {
 
   data.forEach(value => {
     const arrText = value.text.split('\n')
-    const dateTextdirty = cleanText(arrText[0])
-    if (!isNaN(Date.parse(dateTextdirty))) {
+    if (/([0-9]{2})+\/+([0-9]{2})+\/([0-9]{4})/.test(arrText[0])) {
       const res = getData(value)
       res.id = value.id
       res.name = name
@@ -127,8 +126,10 @@ export async function getTwit () {
 
 export async function scraperTwitter () {
   const tweets = await getTwit()
+
   if (tweets === undefined) return
   const dbRead = await readDBFile(TWITTER_FILE_NAME)
+
   const filtered = filterCurrencies(tweets, dbRead)
   if (filtered.length > 0) {
     await writeDBFile(TWITTER_FILE_NAME, filtered)
