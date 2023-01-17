@@ -5,8 +5,8 @@ const URL_TWITTER = 'https://api.twitter.com/2/tweets/search/recent?tweet.fields
 const TWITTER_FILE_NAME = 'twitter'
 
 const SEARCH_SITES = [
-  { name: 'MonitorDolarVla', url: 'monitordolarvla', fun: getTwitMonitorDolarVla },
-  { name: 'Preciodeldolar', url: 'negrodolar', fun: getTwitPrecioDelDolar },
+  // { name: 'MonitorDolarVla', url: 'monitordolarvla', fun: getTwitMonitorDolarVla },
+  // { name: 'Preciodeldolar', url: 'negrodolar', fun: getTwitPrecioDelDolar },
   { name: 'DolarToday', url: 'DolarToday', fun: getDolarToday }
 ]
 
@@ -89,9 +89,9 @@ function getTwitPrecioDelDolar (name, data) {
 
 function getDolarToday (name, data) {
   // Así cotiza el $ a esta hora BsF. 21,20 y el € a BsF. 19,93 entra sin bloqueos
-
   const getData = (dirty) => {
-    const dividido = dirty.split('y el € a BsF.')
+		const dividido = dirty.split('y el € a BsF.')
+
     const currencies = dividido.map(value => Number(value.match(/([0-9]{2,4})+(,|\.)+([0-9]{1,2})/)[0].replace(',', '.')))
     return {
       dollar: currencies[0],
@@ -100,8 +100,8 @@ function getDolarToday (name, data) {
   }
   const result = []
   data.forEach((value) => {
-    if (/Así cotiza el $ a esta hora BsF/.test(value)) {
-      const res = getData(value)
+		if (/esta hora BsF/.test(value.text)) {
+			const res = getData(value.text)
       res.created_at = new Date(value.created_at).getTime()
       res.name = name
       res.id = data.id
