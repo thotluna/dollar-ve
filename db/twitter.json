@@ -383,5 +383,125 @@
     "id": "1615016038482984963",
     "name": "negrodolar",
     "created_at": 1673884803000
+  },
+  {
+    "time": "2023-01-16T13:00:00.000Z",
+    "dollar": 21,
+    "id": "1615031139390849024",
+    "name": "negrodolar",
+    "created_at": 1673888404000,
+    "data": {
+      "edit_history_tweet_ids": [
+        "1615031139390849024"
+      ],
+      "id": "1615031139390849024",
+      "text": "El precio del dólar paralelo en este momento 2023-01-16 13:00 PM: 21 Bs #venezuela #dolar",
+      "created_at": "2023-01-16T17:00:04.000Z"
+    }
+  },
+  {
+    "time": "2023-01-16T14:00:00.000Z",
+    "dollar": 21,
+    "id": "1615046235190136837",
+    "name": "negrodolar",
+    "created_at": 1673892003000,
+    "data": {
+      "edit_history_tweet_ids": [
+        "1615046235190136837"
+      ],
+      "id": "1615046235190136837",
+      "text": "El precio del dólar paralelo en este momento 2023-01-16 14:00 PM: 21 Bs #venezuela #dolar",
+      "created_at": "2023-01-16T18:00:03.000Z"
+    }
+  },
+  {
+    "time": "2023-01-16T15:00:00.000Z",
+    "dollar": 21,
+    "id": "1615061337452777513",
+    "name": "negrodolar",
+    "created_at": 1673895603000,
+    "data": {
+      "edit_history_tweet_ids": [
+        "1615061337452777513"
+      ],
+      "id": "1615061337452777513",
+      "text": "El precio del dólar paralelo en este momento 2023-01-16 15:00 PM: 21 Bs #venezuela #dolar",
+      "created_at": "2023-01-16T19:00:03.000Z"
+    }
+  },
+  {
+    "time": "2023-01-16T16:00:00.000Z",
+    "dollar": 21,
+    "id": "1615076436154482715",
+    "name": "negrodolar",
+    "created_at": 1673899203000,
+    "data": {
+      "edit_history_tweet_ids": [
+        "1615076436154482715"
+      ],
+      "id": "1615076436154482715",
+      "text": "El precio del dólar paralelo en este momento 2023-01-16 16:00 PM: 21 Bs #venezuela #dolar",
+      "created_at": "2023-01-16T20:00:03.000Z"
+    }
+  },
+  {
+    "time": "2023-01-16T17:00:00.000Z",
+    "dollar": 21,
+    "id": "1615091541248299008",
+    "name": "negrodolar",
+    "created_at": 1673902805000,
+    "data": {
+      "edit_history_tweet_ids": [
+        "1615091541248299008"
+      ],
+      "id": "1615091541248299008",
+      "text": "El precio del dólar paralelo en este momento 2023-01-16 17:00 PM: 21 Bs #venezuela #dolar",
+      "created_at": "2023-01-16T21:00:05.000Z"
+    }
+  },
+  {
+    "time": "2023-01-16T18:00:00.000Z",
+    "dollar": 21,
+    "id": "1615106639148851243",
+    "name": "negrodolar",
+    "created_at": 1673906404000,
+    "data": {
+      "edit_history_tweet_ids": [
+        "1615106639148851243"
+      ],
+      "id": "1615106639148851243",
+      "text": "El precio del dólar paralelo en este momento 2023-01-16 18:00 PM: 21 Bs #venezuela #dolar",
+      "created_at": "2023-01-16T22:00:04.000Z"
+    }
+  },
+  {
+    "time": "2023-01-16T19:00:00.000Z",
+    "dollar": 21,
+    "id": "1615121738299211777",
+    "name": "negrodolar",
+    "created_at": 1673910004000,
+    "data": {
+      "edit_history_tweet_ids": [
+        "1615121738299211777"
+      ],
+      "id": "1615121738299211777",
+      "text": "El precio del dólar paralelo en este momento 2023-01-16 19:00 PM: 21 Bs #venezuela #dolar",
+      "created_at": "2023-01-16T23:00:04.000Z"
+    }
+  },
+  {
+    "time": "2023-01-16T20:00:00.000Z",
+    "dollar": 21,
+    "id": "1615136839861518336",
+    "name": "negrodolar",
+    "created_at": 1673913605000,
+    "data": {
+      "edit_history_tweet_ids": [
+        "1615136839861518336"
+      ],
+      "id": "1615136839861518336",
+      "text": "El precio del dólar paralelo en este momento 2023-01-16 20:00 PM: 21 Bs #venezuela #dolar",
+      "created_at": "2023-01-17T00:00:05.000Z"
+    }
   }
 ]
