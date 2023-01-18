@@ -70,7 +70,7 @@ app.get('/last-week/:username', (context) => {
 app.get('/current-full', (context) => {
 	return context.json({
 		return: '/',
-		date: getAllWeekLast()
+		data: getAllWeekLast()
 	})
 })
 
