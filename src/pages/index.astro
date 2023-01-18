@@ -1,11 +1,13 @@
 ---
 
+import { log } from 'astro/dist/core/logger/core';
 import Card from '../components/Card.astro';
 import ChartBackground from '../components/ChartBackground.astro';
 import Layout from '../layouts/Layout.astro'
 import { getCurrencies } from '../services/currencies';
 
 const currencies = await getCurrencies()
+console.log(currencies)
 ---
 
 <Layout title="Welcome to Astro.">
@@ -16,8 +18,8 @@ const currencies = await getCurrencies()
 			<h1 class="text-8xl text-center text-slate-200">Dollar - Bolívar</h1>
 			<section class="flex flex-col gap-4 justify-center items-center md:flex-row md:flex-wrap">
 				{
-					currencies.map(({name, dollar, created_at, increase }) => (
-						<Card name={name} dollar={dollar} created_at={created_at} increase={increase} />
+					currencies.map(({name, dollar, created_at, increase, list }) => (
+						<Card name={name} dollar={dollar} created_at={created_at} increase={increase} list={list} />
 					))
 				}
 			</section>

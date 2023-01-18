@@ -8,9 +8,10 @@ export interface Props {
 	dollar: string | number;
 	created_at: number;
 	increase: number
+	list:[]
 }
 
-const { name, dollar, created_at, increase} = Astro.props;
+const { name, dollar, created_at, increase, list} = Astro.props;
 
 const dollarFixed = Number(dollar).toFixed(2)
 ---
