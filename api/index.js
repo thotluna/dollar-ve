@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import twitter from '../db/twitter.json'
 import bcv from '../db/bcv.json'
-import { currencyForTwitter, getLastBcv, getLastWeekByUsername } from './services'
+import { currencyForTwitter, getLastBcv, getLastWeekByUsername, getAllWeekLast } from './services'
 
 const app = new Hono()
 
@@ -65,6 +65,13 @@ app.get('/last-week/:username', (context) => {
     return: '/',
     data: getLastWeekByUsername(username)
   })
+})
+
+app.get('/current-full', (context) => {
+	return context.json({
+		return: '/',
+		date: getAllWeekLast()
+	})
 })
 
 app.get('/twitter/:username', (context) => {

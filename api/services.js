@@ -66,9 +66,10 @@ export const getLastWeekByUsername = (username) => {
 			const date = new Intl.DateTimeFormat('en-US').format(new Date(value.created_at))
 
 			const data = {
+				name: username,
 				date,
 				dollar: value.dollar,
-				current_at: value.created_at
+				created_at: value.created_at
 			}
 
 			if (!acc[`${date}`]) {
@@ -83,4 +84,26 @@ export const getLastWeekByUsername = (username) => {
 		const filteredEntries = Object.entries(filtered)
 
 	return filteredEntries.map(([, value]) => value)
+}
+
+export const getAllWeekLast = () => {
+	const username = getUserTwitter()
+	username.push('bcv')
+
+	const list = username.map(value => {
+		return getLastWeekByUsername(value)
+	})
+
+	return list.map(value => {
+		const current = value.at(-1)
+		const last = value.at(-2)
+
+		return {
+			dollar: current.dollar,
+			created_at: current.created_at,
+			name: current.name,
+			increase: (Number(current.dollar) - Number(last.dollar)) * 100 / (Number(current.dollar) + Number(last.dollar)),
+			list: value
+		}
+	})
 }
