@@ -95,8 +95,8 @@ export const getAllWeekLast = () => {
 	})
 
 	return list.map(value => {
-		const current = value.at(-1)
-		const last = value.at(-2)
+		const current = value[0]
+		const last = value[1]
 
 		return {
 			dollar: current.dollar,
