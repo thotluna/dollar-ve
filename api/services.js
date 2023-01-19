@@ -63,7 +63,7 @@ export const getLastWeekByUsername = (username) => {
 
 	const filtered = list.filter(value => new Date(value.created_at).getTime() >= date)
 		.reduce((acc, value) => {
-			const date = new Intl.DateTimeFormat('en-US').format(new Date(value.created_at))
+			const date = new Intl.DateTimeFormat('es-ES').format(new Date(value.created_at))
 
 			const data = {
 				name: username,
