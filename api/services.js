@@ -83,7 +83,7 @@ export const getLastWeekByUsername = (username) => {
 
 		const filteredEntries = Object.entries(filtered)
 
-	return filteredEntries.map(([, value]) => value)
+	return filteredEntries.map(([, value]) => value).reverse()
 }
 
 export const getAllWeekLast = () => {
