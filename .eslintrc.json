@@ -24,8 +24,9 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-tabs": "off",
-		"indent": "off",
-		"space-before-function-paren": "off"
+      "no-tabs": "off",
+			"indent": "off",
+			"space-before-function-paren": "off",
+			"no-new": "off"
     }
 }
