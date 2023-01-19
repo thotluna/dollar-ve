@@ -1,9 +1,14 @@
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 import twitter from '../db/twitter.json'
 import bcv from '../db/bcv.json'
 import { currencyForTwitter, getLastBcv, getLastWeekByUsername, getAllWeekLast } from './services'
 
 const app = new Hono()
+
+app.use('/last-week/*', cors({
+	origin: ['https://dollar-ve.pages.dev/', 'http://localhost:3000']
+}))
 
 app.get('/', (context) => {
   return context.json([
