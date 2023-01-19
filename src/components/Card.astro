@@ -1,6 +1,5 @@
 ---
-import ArrowDown from './ArrowDown.astro';
-import ArrowUp from './ArrowUp.astro';
+import ChartIncrase from './ChartIncrase.astro';
 import Incrase from './Incrase.astro';
 
 export interface Props {
@@ -20,8 +19,80 @@ const dollarFixed = Number(dollar).toFixed(2)
 	<strong class="text-right text-slate-300">{name === 'BCV'? name : `@${name}`}</strong>
 	<div class="flex flex-row gap-4 justify-center items-center">
 		<h2 class="text-5xl text-slate-200 text-">{dollarFixed} <strong class="text-base">Bs.</strong></h2>
-		<Incrase increase={increase} />	
-		</div>
+		<!-- <Incrase increase={increase} />	 -->
+		<ChartIncrase username={name} />
+	</div>
 	<p class="text-center text-xs">{new Date(created_at).toLocaleString()}</p>
 </article>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+
+	window.addEventListener("load", async ()=> {
+		const canvas = document.querySelectorAll("canvas")
+		for(const element of canvas){
+			let name = element.dataset.name
+			if(name == "BCV") name = "bcv"
+			const urlApi = `https://dollar-ve-api.eladio-feijoo.workers.dev/last-week/${name}`
+			const request = await fetch(urlApi)
+			const data = await request.json()
+			const list = data.data
+
+			const key = list.map(value => value.date)
+			const dollars = list.map(value => Number(value.dollar))
+
+			const min = Math.min(...dollars)-0.5
+			const max = Math.max(...dollars)+0.5
+
+			console.log(key);
+
+			list.length = 3
+			const ctx = element.getContext('2d')
+			Chart.defaults.font.size = 10
+			Chart.defaults.borderColor = '#94A3B8';
+			Chart.defaults.color = '#CBD5E1';
+			const chart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: key,
+					datasets:[{
+						label: null,
+						data: dollars, 
+					}]
+				},
+				options:{
+					responsive: true,
+					plugins:{
+						legend:{
+							display: false
+						}
+					},
+					scales: {
+						x: {
+							display: true,
+							title: {
+								display: false
+							}
+						},
+						y: {
+							display: true,
+							title: {
+								display: false,
+							},
+							min,
+							max
+						}
+					}
+				}
+			})
+		
+
+		}
+	})
+	
+
+	
+
+</script>
+
 
