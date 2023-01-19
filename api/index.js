@@ -7,7 +7,7 @@ import { currencyForTwitter, getLastBcv, getLastWeekByUsername, getAllWeekLast }
 const app = new Hono()
 
 app.use('/last-week/*', cors({
-	origin: ['https://dollar-ve.pages.dev/', 'http://localhost:3000']
+	origin: ['https://dollar-ve.pages.dev/', 'http://localhost:3000', 'https://dollar-ve-api.eladio-feijoo.workers.dev/']
 }))
 
 app.get('/', (context) => {
