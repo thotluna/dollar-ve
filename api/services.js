@@ -89,6 +89,7 @@ export const getLastWeekByUsername = (username) => {
 export const getAllWeekLast = () => {
 	const username = getUserTwitter()
 	username.push('bcv')
+	username.reverse()
 
 	const list = username.map(value => {
 		return getLastWeekByUsername(value)
