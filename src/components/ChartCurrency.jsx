@@ -11,8 +11,8 @@ export function ChartCurrency({ list }) {
 	useChartBar(canvasRef, key, dollars)
 
 	return (
-		<div style={{ width: '200px' }}>
-			<canvas style={{ width: '200px' }} ref={canvasRef}>Si ves este mensaje es porque tu navegador no soporta canvas</canvas>
+		<div className='w-40 sm:w-52' >
+			<canvas className='w-40 sm:w-52' ref={canvasRef}>Si ves este mensaje es porque tu navegador no soporta canvas</canvas>
 		</div>
 	)
 }
