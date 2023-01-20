@@ -13,8 +13,11 @@ const currencies = await getCurrencies()
 	
 	<div class="min-h-screen mx-auto bg-slate-900 ">
 		<ChartBackground>
-		<main class="flex flex-col justify-center items-center gap-8 min-h-screen ">
-			<h1 class="text-8xl text-center text-slate-200">Dolar - Bolívar</h1>
+		<main class="max-w-5xl mx-auto flex flex-col justify-center items-center gap-8 min-h-screen container">
+			<div class="w-full flex flex-row justify-center items-center gap-2 flex-wrap">
+				<img class=" hidden sm:block w-24 li" src="./images/favicon.svg" alt="null" />
+			<h1 class="max-w-xs lg:max-w-full text-8xl text-center text-slate-200">Dolar - Bolívar</h1>
+			</div>
 			<section class="flex flex-col gap-4 justify-center items-center md:flex-row md:flex-wrap">
 				{
 					currencies.map(({name, dollar, created_at, increase, list }) => (
