@@ -13,9 +13,17 @@ export interface Props {
 const { name, dollar, created_at, list} = Astro.props;
 const dollarFixed = Number(dollar).toFixed(2)
 const date = new Date(created_at)
-let options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'};
-// options.timeZone = '+4';
-options.timeZoneName = 'short'
+let options = { 
+	year: 'numeric', 
+	month: 'long', 
+	day: 'numeric', 
+	hour: 'numeric', 
+	minute: 'numeric', 
+	second: 'numeric', 
+	// timeZone: 'UTC',
+	// timeZoneName: 'long'
+};
+
 const dateShow = new Intl.DateTimeFormat('es-ES', options).format(date)
 ---
 
