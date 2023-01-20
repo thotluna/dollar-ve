@@ -10,6 +10,7 @@ export function useChartBar(ref, keys, values) {
 		const ctx = canvas.getContext('2d')
 
 		Chart.defaults.font.size = 10
+		Chart.defaults.backgroundColor = 'rgba(74, 222, 128, .5)'
 		Chart.defaults.borderColor = '#94A3B8'
 		Chart.defaults.color = '#94A3B8'
 
@@ -19,7 +20,8 @@ export function useChartBar(ref, keys, values) {
 				labels: keys,
 				datasets: [{
 					label: null,
-					data: values
+					data: values,
+					backgroundColor: 'rgba(74, 222, 128, .5)'
 				}]
 			},
 			options: {
