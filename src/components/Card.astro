@@ -11,12 +11,13 @@ export interface Props {
 }
 
 const { name, dollar, created_at, list} = Astro.props;
+console.log({name})
 const dollarFixed = Number(dollar).toFixed(2)
 ---
 
 <article class="bg-slate-600  rounded-lg p-8 min-w-[290px] flex flex-col gap-2 py-4 text-slate-200">
 	
-	<strong class="text-right text-slate-300">{name === 'BCV'? name : `@${name}`}</strong>
+	<strong class="text-right text-slate-300">{`@${name}`}</strong>
 	
 	<div class="flex flex-row gap-4 justify-center items-center">
 		<h2 class="text-5xl text-slate-200 text-">

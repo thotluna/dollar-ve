@@ -102,7 +102,7 @@ export const getAllWeekLast = () => {
 		return {
 			dollar: current.dollar,
 			created_at: current.created_at,
-			name: current.name,
+			name: current.name === 'bcv' ? 'BCV_ORG_VE' : current.name,
 			increase: (Number(current.dollar) - Number(last.dollar)) * 100 / (Number(current.dollar) + Number(last.dollar)),
 			list: value
 		}
