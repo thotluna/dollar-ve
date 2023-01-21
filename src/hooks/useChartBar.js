@@ -2,8 +2,8 @@ import Chart from 'chart.js/auto'
 import { useEffect } from 'react'
 
 export function useChartBar(ref, keys, values) {
-	const min = Math.min(...values.map(value => Number(value))) - 0.5
-	const max = Math.max(...values.map(value => Number(value))) + 0.5
+	const min = Math.min(...values.map((value) => Number(value))) - 0.5
+	const max = Math.max(...values.map((value) => Number(value))) + 0.5
 
 	const chart = async () => {
 		const canvas = ref.current
@@ -18,11 +18,13 @@ export function useChartBar(ref, keys, values) {
 			type: 'bar',
 			data: {
 				labels: keys,
-				datasets: [{
-					label: null,
-					data: values,
-					backgroundColor: 'rgba(74, 222, 128, .5)'
-				}]
+				datasets: [
+					{
+						label: null,
+						data: values,
+						backgroundColor: 'rgba(74, 222, 128, .5)'
+					}
+				]
 			},
 			options: {
 				responsive: true,

@@ -1,24 +1,30 @@
 ---
 export interface Props {
-	title: string;
+	title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang='es'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="keywords" content="Dolar, dollar, bolívar, bolívares, bolivar, bolivares, taza, cambio, hoy, venezuela" />
-		<meta name="description" content="Aquí podrá encontrar la taza de cambio de Bolívares a Dolar EUA de Hoy" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/images/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<meta
+			name='keywords'
+			content='Dolar, dollar, bolívar, bolívares, bolivar, bolivares, taza, cambio, hoy, venezuela'
+		/>
+		<meta
+			name='description'
+			content='Aquí podrá encontrar la taza de cambio de Bolívares a Dolar EUA de Hoy'
+		/>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		<title>{title}</title>
 	</head>
-	<body class="bg-slate-900 text-slate-400">
+	<body class='bg-slate-900 text-slate-400'>
 		<slot />
 	</body>
 </html>

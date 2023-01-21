@@ -2,15 +2,15 @@ import Twitter from '../db/twitter.json'
 import BCV from '../db/bcv.json'
 
 const getLastTwitter = (acc, value) => {
-  const userTwitter = value.name
-  if (acc[userTwitter] === undefined) acc[userTwitter] = value
-  acc[userTwitter] = acc[userTwitter].id < value.id ? value : acc[userTwitter]
-  return acc
+	const userTwitter = value.name
+	if (acc[userTwitter] === undefined) acc[userTwitter] = value
+	acc[userTwitter] = acc[userTwitter].id < value.id ? value : acc[userTwitter]
+	return acc
 }
 
 export const getLastsTwitter = () => {
-  const obj = Twitter.reduce(getLastTwitter, {})
-  return Object.entries(obj).map(([key, value]) => value)
+	const obj = Twitter.reduce(getLastTwitter, {})
+	return Object.entries(obj).map(([key, value]) => value)
 }
 
 export const getLastBcv = () => {
@@ -24,9 +24,9 @@ export const getLastBcv = () => {
 	if (isNaN(lastDollar)) {
 		currentCurrency.increase = 0
 	} else {
-		currentCurrency.increase = (currentDollar - lastDollar) * 100 / (lastDollar + currentDollar)
+		currentCurrency.increase = ((currentDollar - lastDollar) * 100) / (lastDollar + currentDollar)
 	}
-  return [currentCurrency]
+	return [currentCurrency]
 }
 
 export const getUserTwitter = () => {
@@ -44,24 +44,26 @@ export const getTweets = (username) => {
 
 export const currencyForTwitter = () => {
 	const username = getUserTwitter()
-	const tweets = username.map(value => {
-		return getTweets(value).sort((a, b) => a.created_at - b.created_b).reverse().slice(0, 2)
+	const tweets = username.map((value) => {
+		return getTweets(value)
+			.sort((a, b) => a.created_at - b.created_b)
+			.reverse()
+			.slice(0, 2)
 	})
-  return tweets.map(([current, last]) => {
-    current.increase = (current.dollar - last.dollar) * 100 / (current.dollar + last.dollar)
-    return current
-  })
+	return tweets.map(([current, last]) => {
+		current.increase = ((current.dollar - last.dollar) * 100) / (current.dollar + last.dollar)
+		return current
+	})
 }
 
 export const getLastWeekByUsername = (username) => {
-	const list = username === 'bcv'
-		? BCV
-		: getTweets(username)
+	const list = username === 'bcv' ? BCV : getTweets(username)
 
 	const today = new Date()
 	const date = today.setDate(today.getDate() - 7)
 
-	const filtered = list.filter(value => new Date(value.created_at).getTime() >= date)
+	const filtered = list
+		.filter((value) => new Date(value.created_at).getTime() >= date)
 		.reduce((acc, value) => {
 			const date = new Intl.DateTimeFormat('es-ES').format(new Date(value.created_at))
 
@@ -81,7 +83,7 @@ export const getLastWeekByUsername = (username) => {
 			return acc
 		}, {})
 
-		const filteredEntries = Object.entries(filtered)
+	const filteredEntries = Object.entries(filtered)
 
 	return filteredEntries.map(([, value]) => value).reverse()
 }
@@ -91,11 +93,11 @@ export const getAllWeekLast = () => {
 	username.push('bcv')
 	username.reverse()
 
-	const list = username.map(value => {
+	const list = username.map((value) => {
 		return getLastWeekByUsername(value)
 	})
 
-	return list.map(value => {
+	return list.map((value) => {
 		const current = value[0]
 		const last = value[1]
 
@@ -103,7 +105,9 @@ export const getAllWeekLast = () => {
 			dollar: current.dollar,
 			created_at: current.created_at,
 			name: current.name === 'bcv' ? 'BCV_ORG_VE' : current.name,
-			increase: (Number(current.dollar) - Number(last.dollar)) * 100 / (Number(current.dollar) + Number(last.dollar)),
+			increase:
+				((Number(current.dollar) - Number(last.dollar)) * 100) /
+				(Number(current.dollar) + Number(last.dollar)),
 			list: value
 		}
 	})

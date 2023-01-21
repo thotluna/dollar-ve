@@ -10,7 +10,7 @@ export async function getAll(dbName) {
 
 export async function getAllByUsername(dbName, username) {
 	const db = getAll(dbName)
-	return db.filter(value => value.name === username)
+	return db.filter((value) => value.name === username)
 }
 
 export async function getLastTweetByUsername(dbName, username) {

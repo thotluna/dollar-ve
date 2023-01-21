@@ -9,6 +9,6 @@ import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://dollar-ve.pages.dev/',
-  integrations: [tailwind(), sitemap(), react()]
+	site: 'https://dollar-ve.pages.dev/',
+	integrations: [tailwind(), sitemap(), react()]
 })

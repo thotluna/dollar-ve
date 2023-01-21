@@ -1,47 +1,42 @@
 ---
-import ChartIncrase from './ChartIncrase.astro';
-import { ChartCurrency } from "./ChartCurrency.jsx";
+import ChartIncrase from './ChartIncrase.astro'
+import { ChartCurrency } from './ChartCurrency.jsx'
 
 export interface Props {
-	name: string;
-	dollar: string | number;
-	created_at: number;
+	name: string
+	dollar: string | number
+	created_at: number
 	increase: number
-	list:[]
+	list: []
 }
 
-const { name, dollar, created_at, list} = Astro.props;
+const { name, dollar, created_at, list } = Astro.props
 const dollarFixed = Number(dollar).toFixed(2)
 const date = new Date(created_at)
-let options = { 
-	year: 'numeric', 
-	month: 'long', 
-	day: 'numeric', 
-	hour: 'numeric', 
-	minute: 'numeric', 
-	second: 'numeric', 
-	timeZone: 'America/Caracas',
+let options = {
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
+	hour: 'numeric',
+	minute: 'numeric',
+	second: 'numeric',
+	timeZone: 'America/Caracas'
 	// timeZoneName: 'short'
-};
+}
 
 const dateShow = new Intl.DateTimeFormat('es-ES', options).format(date)
 ---
 
-<article class="bg-slate-600  rounded-lg p-8 min-w-[290px] flex flex-col gap-2 py-4 text-slate-200">
-	
-	<strong class="text-right text-slate-300">{`@${name}`}</strong>
-	
-	<div class="flex flex-row gap-4 justify-center items-center ">
-		<h2 class=" text-4xl sm:text-5xl text-green-400 min-w-[117px]">
-			{dollarFixed} 
-			<strong class="text-base">Bs.</strong>
+<article class='bg-slate-600 rounded-lg p-8 min-w-[290px] flex flex-col gap-2 py-4 text-slate-200'>
+	<strong class='text-right text-slate-300'>{`@${name}`}</strong>
+
+	<div class='flex flex-row gap-4 justify-center items-center'>
+		<h2 class='text-4xl sm:text-5xl text-green-400 min-w-[117px]'>
+			{dollarFixed}
+			<strong class='text-base'>Bs.</strong>
 		</h2>
 		<ChartCurrency list={list} client:load />
 	</div>
-	
-	<p class="text-center text-xs">{dateShow}</p>
 
+	<p class='text-center text-xs'>{dateShow}</p>
 </article>
-
-
-

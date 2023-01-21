@@ -2,34 +2,34 @@ name: Data acquisition
 
 on:
   workflow_dispatch:
-    
+
   schedule:
-    - cron: "0 14-22/5 * * 1-5"
+    - cron: '0 14-22/5 * * 1-5'
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     environment: build
-    env: 
+    env:
       API_TOKEN: ${{ secrets.API_TOKEN }}
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - name: install npm dependecy
-      run: npm ci
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install npm dependecy
+        run: npm ci
 
-    - name: Load data from network
-      run: npm run scrape
-    
-    - name: Commit changes
-      uses:  EndBug/add-and-commit@v9
-      with:
-        author_name: thotluna
-        author_email: eladio.feijoo@gmail.com
-        message: 'Add new acquisitions to bot'
-    - name: Publish
-      uses: cloudflare/wrangler-action@2.0.0
-      with:
-        apiToken: ${{ secrets.CF_API_TOKEN }}
+      - name: Load data from network
+        run: npm run scrape
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: thotluna
+          author_email: eladio.feijoo@gmail.com
+          message: 'Add new acquisitions to bot'
+      - name: Publish
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}

@@ -1,13 +1,19 @@
 ---
-	
-	export interface Props{
-		username: string
-	}
+export interface Props {
+	username: string
+}
 
-	const {username} = Astro.props
+const { username } = Astro.props
 ---
-<div style="width: 200px; aspec-ratio: 2">
-	<canvas style="width: 200px; aspec-ratio: 2" id="chart"  data-name={username} aria-label={`dolar {username}`} role="img">
+
+<div style='width: 200px; aspec-ratio: 2'>
+	<canvas
+		style='width: 200px; aspec-ratio: 2'
+		id='chart'
+		data-name={username}
+		aria-label={`dolar {username}`}
+		role='img'
+	>
 		Your browser does not support the canvas element.
 	</canvas>
 </div>
