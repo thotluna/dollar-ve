@@ -9,14 +9,14 @@ import { getCurrencies } from '../services/currencies';
 const currencies = await getCurrencies()
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Tasa de Cambio de Referencia">
 	
 	<div class="min-h-screen mx-auto bg-slate-900 ">
 		<ChartBackground>
 		<main class="max-w-5xl mx-auto flex flex-col justify-center items-center gap-8 min-h-screen container">
 			<div class="w-full flex flex-row justify-center items-center gap-2 flex-wrap">
 				<img class=" hidden sm:block w-24 li" src="./images/favicon.svg" alt="null" />
-			<h1 class="max-w-xs lg:max-w-full text-8xl text-center text-slate-200">Dolar - Bolívar</h1>
+			<h1 class="max-w-xs lg:max-w-full text-8xl text-center text-slate-200">Dólar - Bolívar</h1>
 			</div>
 			<section class="flex flex-col gap-4 justify-center items-center md:flex-row md:flex-wrap">
 				{
@@ -26,7 +26,7 @@ const currencies = await getCurrencies()
 				}
 			</section>
 			<footer>
-				<p class="max-w-4xl text-center px-4 pb-4">Estos datos son recaudados de la Página oficial del Banco Central de Venezuela y de la Red Social Twitter, respectivamente. No somos economistas ni analistas, por lo que no colocamos, negociamos, vendemos, compramos o Recomendamos ningún valor de la taza de cambio Bolívar Dólar</p>
+				<p class="max-w-4xl text-center px-4 pb-4">Estos datos son recaudados de la Página oficial del Banco Central de Venezuela y de la Red Social Twitter, respectivamente. No somos economistas ni analistas, por lo que no colocamos, negociamos, vendemos, compramos o Recomendamos ningún valor de la tasa de cambio Bolívar Dólar</p>
 			</footer>
 		</main>
 		
