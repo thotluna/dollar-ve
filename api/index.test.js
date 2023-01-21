@@ -1,3 +1,4 @@
+// eslint-disable-next-line camelcase
 import { unstable_dev } from 'wrangler'
 import { describe, expect, it, beforeAll, afterAll } from 'vitest'
 

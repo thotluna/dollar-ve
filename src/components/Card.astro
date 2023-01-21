@@ -4,15 +4,15 @@ import { ChartCurrency } from './ChartCurrency.jsx'
 export interface Props {
 	name: string
 	dollar: string | number
-	created_at: number
+	createdAt: number
 	increase: number
 	list: []
 }
 
-const { name, dollar, created_at, list } = Astro.props
+const { name, dollar, createdAt, list } = Astro.props
 const dollarFixed = Number(dollar).toFixed(2)
-const date = new Date(created_at)
-let options = {
+const date = new Date(createdAt)
+const options = {
 	year: 'numeric',
 	month: 'long',
 	day: 'numeric',
