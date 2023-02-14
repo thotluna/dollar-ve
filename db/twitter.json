@@ -3626,5 +3626,60 @@
     "name": "negrodolar",
     "created_at": 1676383203000,
     "data": "El precio del dólar paralelo en este momento 2023-02-14 10:00 AM: 25 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-02-14T11:00:00.000Z",
+    "dollar": 25,
+    "id": "1625510183739826176",
+    "name": "negrodolar",
+    "created_at": 1676386802000,
+    "data": "El precio del dólar paralelo en este momento 2023-02-14 11:00 AM: 25 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-02-14T12:00:00.000Z",
+    "dollar": 25,
+    "id": "1625525285343854598",
+    "name": "negrodolar",
+    "created_at": 1676390403000,
+    "data": "El precio del dólar paralelo en este momento 2023-02-14 12:00 PM: 25 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-02-14T13:00:00.000Z",
+    "dollar": 25,
+    "id": "1625540387753414656",
+    "name": "negrodolar",
+    "created_at": 1676394004000,
+    "data": "El precio del dólar paralelo en este momento 2023-02-14 13:00 PM: 25 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-02-14T01:00:00.000Z",
+    "dollar": 24.95,
+    "id": "1625540436843438082",
+    "name": "monitordolarvla",
+    "created_at": 1676394015000,
+    "data": "🗓 14/02/2023\n🕒 1:00 PM\n💵 Bs. 24,95\n🔻 0,15% Bs 0,04 https://t.co/fgRw3HuHGM"
+  },
+  {
+    "dollar": 25,
+    "euro": 23.5,
+    "created_at": 1676395263000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 25,00 y el € a BsF. 23,50 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/xFAp5tvCvE"
+  },
+  {
+    "time": "2023-02-14T14:00:00.000Z",
+    "dollar": 25,
+    "id": "1625555483602915335",
+    "name": "negrodolar",
+    "created_at": 1676397603000,
+    "data": "El precio del dólar paralelo en este momento 2023-02-14 14:00 PM: 25 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-02-14T15:00:00.000Z",
+    "dollar": 25,
+    "id": "1625570581482508304",
+    "name": "negrodolar",
+    "created_at": 1676401202000,
+    "data": "El precio del dólar paralelo en este momento 2023-02-14 15:00 PM: 25 Bs #venezuela #dolar"
   }
 ]
