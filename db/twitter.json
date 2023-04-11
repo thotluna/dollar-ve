@@ -10169,5 +10169,59 @@
     "name": "negrodolar",
     "created_at": 1681221606000,
     "data": "El precio del dólar paralelo en este momento 2023-04-11 10:00 AM: 25.03 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-11T11:00:00.000Z",
+    "dollar": 25.03,
+    "id": "1645803922035179529",
+    "name": "negrodolar",
+    "created_at": 1681225207000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-11 11:00 AM: 25.03 Bs #venezuela #dolar"
+  },
+  {
+    "dollar": 25.03,
+    "euro": 27.03,
+    "created_at": 1681226464000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 25,03 y el € a BsF. 27,03 entra sin bloqueos https://t.co/RwK4U56O1z https://t.co/3T9rr89arN"
+  },
+  {
+    "time": "2023-04-11T12:00:00.000Z",
+    "dollar": 25.03,
+    "id": "1645819014755635200",
+    "name": "negrodolar",
+    "created_at": 1681228805000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-11 12:00 PM: 25.03 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-11T13:00:00.000Z",
+    "dollar": 25.05,
+    "id": "1645834113855651850",
+    "name": "negrodolar",
+    "created_at": 1681232405000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-11 13:00 PM: 25.05 Bs #venezuela #dolar"
+  },
+  {
+    "dollar": 25.05,
+    "euro": 27.03,
+    "created_at": 1681233663000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 25,05 y el € a BsF. 27,03 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/oLzROw9m7Q"
+  },
+  {
+    "time": "2023-04-11T14:00:00.000Z",
+    "dollar": 25.05,
+    "id": "1645849218672623616",
+    "name": "negrodolar",
+    "created_at": 1681236006000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-11 14:00 PM: 25.05 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-11T15:00:00.000Z",
+    "dollar": 25.05,
+    "id": "1645864315247906821",
+    "name": "negrodolar",
+    "created_at": 1681239606000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-11 15:00 PM: 25.05 Bs #venezuela #dolar"
   }
 ]
