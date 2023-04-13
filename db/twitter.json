@@ -10489,5 +10489,67 @@
     "name": "negrodolar",
     "created_at": 1681394405000,
     "data": "El precio del dólar paralelo en este momento 2023-04-13 10:00 AM: 24.9 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-13T11:00:00.000Z",
+    "dollar": 24.9,
+    "id": "1646528689419743237",
+    "name": "negrodolar",
+    "created_at": 1681398005000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-13 11:00 AM: 24.9 Bs #venezuela #dolar"
+  },
+  {
+    "dollar": 24.9,
+    "euro": 27.07,
+    "created_at": 1681399264000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 24,90 y el € a BsF. 27,07 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/xhjL4Z9Lpf"
+  },
+  {
+    "time": "2023-04-13T12:00:00.000Z",
+    "dollar": 24.9,
+    "id": "1646543790256029696",
+    "name": "negrodolar",
+    "created_at": 1681401605000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-13 12:00 PM: 24.9 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-13T13:00:00.000Z",
+    "dollar": 24.91,
+    "id": "1646558894494187542",
+    "name": "negrodolar",
+    "created_at": 1681405206000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-13 13:00 PM: 24.91 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-13T01:00:00.000Z",
+    "dollar": 24.87,
+    "id": "1646560162918826005",
+    "name": "monitordolarvla",
+    "created_at": 1681405509000,
+    "data": "🗓 13/04/2023\n🕒 1:00 PM\n💵 Bs. 24,87\n🔻 0,19% Bs 0,05 https://t.co/kphFdsC7qO"
+  },
+  {
+    "dollar": 24.91,
+    "euro": 27.07,
+    "created_at": 1681406463000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 24,91 y el € a BsF. 27,07 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/dsxM8nCX0b"
+  },
+  {
+    "time": "2023-04-13T14:00:00.000Z",
+    "dollar": 24.91,
+    "id": "1646573999692939279",
+    "name": "negrodolar",
+    "created_at": 1681408808000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-13 14:00 PM: 24.91 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-13T15:00:00.000Z",
+    "dollar": 24.91,
+    "id": "1646589088890339329",
+    "name": "negrodolar",
+    "created_at": 1681412405000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-13 15:00 PM: 24.91 Bs #venezuela #dolar"
   }
 ]
