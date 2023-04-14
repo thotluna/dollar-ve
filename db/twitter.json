@@ -10660,5 +10660,60 @@
     "name": "negrodolar",
     "created_at": 1681480804000,
     "data": "El precio del dólar paralelo en este momento 2023-04-14 10:00 AM: 24.86 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-14T11:00:00.000Z",
+    "dollar": 24.86,
+    "id": "1646891084474187778",
+    "name": "negrodolar",
+    "created_at": 1681484406000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-14 11:00 AM: 24.86 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-14T12:00:00.000Z",
+    "dollar": 24.86,
+    "id": "1646906176209133570",
+    "name": "negrodolar",
+    "created_at": 1681488005000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-14 12:00 PM: 24.86 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-14T13:00:00.000Z",
+    "dollar": 24.83,
+    "id": "1646921276353568771",
+    "name": "negrodolar",
+    "created_at": 1681491605000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-14 13:00 PM: 24.83 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-14T01:00:00.000Z",
+    "dollar": 24.82,
+    "id": "1646921911119536147",
+    "name": "monitordolarvla",
+    "created_at": 1681491756000,
+    "data": "🗓 14/04/2023\n🕒 1:00 PM\n💵 Bs. 24,82\n🔻 0,19% Bs 0,05 https://t.co/FRtQg3Fwkg"
+  },
+  {
+    "dollar": 24.83,
+    "euro": 27.07,
+    "created_at": 1681492863000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 24,83 y el € a BsF. 27,07 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/cz2FySev2L"
+  },
+  {
+    "time": "2023-04-14T14:00:00.000Z",
+    "dollar": 24.83,
+    "id": "1646936374790979586",
+    "name": "negrodolar",
+    "created_at": 1681495205000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-14 14:00 PM: 24.83 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-04-14T15:00:00.000Z",
+    "dollar": 24.83,
+    "id": "1646951488852316167",
+    "name": "negrodolar",
+    "created_at": 1681498808000,
+    "data": "El precio del dólar paralelo en este momento 2023-04-14 15:00 PM: 24.83 Bs #venezuela #dolar"
   }
 ]
