@@ -12981,5 +12981,59 @@
     "name": "negrodolar",
     "created_at": 1683208806000,
     "data": "El precio del dólar paralelo en este momento 2023-05-04 10:00 AM: 25.7 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-04T11:00:00.000Z",
+    "dollar": 25.7,
+    "id": "1654138839911346176",
+    "name": "negrodolar",
+    "created_at": 1683212406000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-04 11:00 AM: 25.7 Bs #venezuela #dolar"
+  },
+  {
+    "dollar": 25.7,
+    "euro": 28.27,
+    "created_at": 1683213663000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 25,70 y el € a BsF. 28,27 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/AM1DruAtJT"
+  },
+  {
+    "time": "2023-05-04T13:00:00.000Z",
+    "dollar": 25.65,
+    "id": "1654169035993391104",
+    "name": "negrodolar",
+    "created_at": 1683219605000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-04 13:00 PM: 25.65 Bs #venezuela #dolar"
+  },
+  {
+    "dollar": 25.65,
+    "euro": 28.21,
+    "created_at": 1683220864000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 25,65 y el € a BsF. 28,21 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/Y5BLzPXWwh"
+  },
+  {
+    "time": "2023-05-04T01:20:00.000Z",
+    "dollar": 25.64,
+    "id": "1654176340298412032",
+    "name": "monitordolarvla",
+    "created_at": 1683221347000,
+    "data": "🗓 04/05/2023\n🕒 1:20 PM\n💵 Bs. 25,64\n🔻 0,14% Bs 0,03 https://t.co/IF0nj4yqJh"
+  },
+  {
+    "time": "2023-05-04T14:00:00.000Z",
+    "dollar": 25.65,
+    "id": "1654184129896890369",
+    "name": "negrodolar",
+    "created_at": 1683223204000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-04 14:00 PM: 25.65 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-04T15:00:00.000Z",
+    "dollar": 25.65,
+    "id": "1654199225289265166",
+    "name": "negrodolar",
+    "created_at": 1683226803000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-04 15:00 PM: 25.65 Bs #venezuela #dolar"
   }
 ]
