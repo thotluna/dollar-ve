@@ -13678,5 +13678,99 @@
     "created_at": 1683746463000,
     "name": "DolarToday",
     "data": "Así cotiza el $ a esta hora BsF. 26,40 y el € a BsF. 28,51 entra sin bloqueos https://t.co/RwK4U56O1z https://t.co/WKHrqcaS9h"
+  },
+  {
+    "dollar": 26.4,
+    "euro": 28.51,
+    "created_at": 1683753663000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 26,40 y el € a BsF. 28,51 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/HGb4kLF9tD"
+  },
+  {
+    "time": "2023-05-11T01:00:00.000Z",
+    "dollar": 26.4,
+    "id": "1656524553097469953",
+    "name": "negrodolar",
+    "created_at": 1683781204000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 01:00 AM: 26.4 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-11T02:00:00.000Z",
+    "dollar": 26.4,
+    "id": "1656539655267840001",
+    "name": "negrodolar",
+    "created_at": 1683784805000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 02:00 AM: 26.4 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-11T03:00:00.000Z",
+    "dollar": 26.4,
+    "id": "1656554748491726850",
+    "name": "negrodolar",
+    "created_at": 1683788403000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 03:00 AM: 26.4 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-11T04:00:00.000Z",
+    "dollar": 26.4,
+    "id": "1656569855686897668",
+    "name": "negrodolar",
+    "created_at": 1683792005000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 04:00 AM: 26.4 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-11T05:00:00.000Z",
+    "dollar": 26.4,
+    "id": "1656584950550867968",
+    "name": "negrodolar",
+    "created_at": 1683795604000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 05:00 AM: 26.4 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-11T06:00:00.000Z",
+    "dollar": 26.4,
+    "id": "1656600055430762498",
+    "name": "negrodolar",
+    "created_at": 1683799206000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 06:00 AM: 26.4 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-11T07:00:00.000Z",
+    "dollar": 26.4,
+    "id": "1656615155730468866",
+    "name": "negrodolar",
+    "created_at": 1683802806000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 07:00 AM: 26.4 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-11T08:00:00.000Z",
+    "dollar": 26.4,
+    "id": "1656630250116202496",
+    "name": "negrodolar",
+    "created_at": 1683806404000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 08:00 AM: 26.4 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-11T09:00:00.000Z",
+    "dollar": 26.54,
+    "id": "1656645357281984515",
+    "name": "negrodolar",
+    "created_at": 1683810006000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 09:00 AM: 26.54 Bs #venezuela #dolar"
+  },
+  {
+    "dollar": 26.54,
+    "euro": 28.51,
+    "created_at": 1683811263000,
+    "name": "DolarToday",
+    "data": "Así cotiza el $ a esta hora BsF. 26,54 y el € a BsF. 28,51 entra sin bloqueos https://t.co/RwK4U56gc1 https://t.co/Au6lbL4Ndb"
+  },
+  {
+    "time": "2023-05-11T10:00:00.000Z",
+    "dollar": 26.54,
+    "id": "1656660447796535298",
+    "name": "negrodolar",
+    "created_at": 1683813604000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-11 10:00 AM: 26.54 Bs #venezuela #dolar"
   }
 ]
