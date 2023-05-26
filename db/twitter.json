@@ -15475,5 +15475,53 @@
     "name": "negrodolar",
     "created_at": 1685109603000,
     "data": "El precio del dólar paralelo en este momento 2023-05-26 10:00 AM: 27.18 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-26T11:00:00.000Z",
+    "dollar": 27.18,
+    "id": "1662111366180749315",
+    "name": "negrodolar",
+    "created_at": 1685113204000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-26 11:00 AM: 27.18 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-26T12:00:00.000Z",
+    "dollar": 27.18,
+    "id": "1662126474944565248",
+    "name": "negrodolar",
+    "created_at": 1685116807000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-26 12:00 PM: 27.18 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-26T13:00:00.000Z",
+    "dollar": 27.18,
+    "id": "1662141561440706562",
+    "name": "negrodolar",
+    "created_at": 1685120404000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-26 13:00 PM: 27.18 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-26T01:00:00.000Z",
+    "dollar": 28.21,
+    "id": "1662141691598454814",
+    "name": "monitordolarvla",
+    "created_at": 1685120435000,
+    "data": "🗓 26/05/2023\n🕒 1:00 PM\n💵 Bs. 28,21\n🔺 0,26% Bs 0,07 https://t.co/BIZY5RvzGD"
+  },
+  {
+    "time": "2023-05-26T14:00:00.000Z",
+    "dollar": 27.18,
+    "id": "1662156672146472980",
+    "name": "negrodolar",
+    "created_at": 1685124006000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-26 14:00 PM: 27.18 Bs #venezuela #dolar"
+  },
+  {
+    "time": "2023-05-26T15:00:00.000Z",
+    "dollar": 27.18,
+    "id": "1662171767895408655",
+    "name": "negrodolar",
+    "created_at": 1685127605000,
+    "data": "El precio del dólar paralelo en este momento 2023-05-26 15:00 PM: 27.18 Bs #venezuela #dolar"
   }
 ]
